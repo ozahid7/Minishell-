@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 15:46:44 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/12 23:57:22 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/14 12:28:35 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_list
 	t_red			*red;
 	struct s_list	*next;
 }	t_list;
+
 /*
 **  Part 1 - Libc functions
 */

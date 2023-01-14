@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   minishell_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/01 21:33:06 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/13 15:08:24 by ajafy            ###   ########.fr       */
+/*   Created: 2023/01/14 10:28:33 by ajafy             #+#    #+#             */
+/*   Updated: 2023/01/14 11:41:02 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,31 +60,20 @@ int	ft_remplire_listes(char *s, t_temp **lst_t, t_env **lst_e)
 	return (1);
 }
 
-int	main(int ac, char **av, char **env)
+t_env	*after_while(int ac, char **av, char **env)
 {
-	t_temp	*lst_temp;
-	t_list	*lst;
 	t_env	*lst_env;
-	char	*str;
 
 	(void) ac;
 	(void) av;
 	signal(SIGINT, handler_sig);
 	signal(SIGQUIT, SIG_IGN);
 	lst_env = ft_remplire_env(env);
-	while (1)
-	{
-		str = readline("Minishell :$ ");
-		if (!str)
-			ft_exit();
-		add_history(str);
-		lst = NULL;
-		lst_temp = NULL;
-		if (ft_remplire_listes(str, &lst_temp, &lst_env) != -1)
-		{
-			lst = remplire_list(lst, &lst_temp);
-		}	
-		free_lst_temp(lst_temp);
-		free_lst(lst);
-	}
+	return (lst_env);
+}
+
+void	ft_free(t_temp *lst_temp, t_list *lst)
+{
+	free_lst_temp(lst_temp);
+	free_lst(lst);
 }

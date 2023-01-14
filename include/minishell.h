@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:32:59 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/13 15:08:52 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/14 10:50:29 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@
 # include <readline/history.h>
 # include "../libft/libft.h"
 
-# define INFILE 10
-# define OUTFILE 11
-# define HERDOC 12
-# define APPAND 13
+# define INFILE 4
+# define OUTFILE 7
+# define HERDOC 44
+# define APPAND 77
 
 int	g_exit_status;
 
@@ -117,6 +117,15 @@ int		is_herdoc(t_temp *lst);
 t_temp	*ft_join_lst_(t_temp *lst);
 void	herdoc_in(t_temp **lst, int *fds, t_env **head_env);
 
+/*
+Parsing
+*/
+
+int		ft_remplire_listes(char *s, t_temp **lst_t, t_env **lst_e);
+int		ft_check_quotes(char *str);
+void	ft_exit(void);
+t_env	*after_while(int ac, char **av, char **env);
+void	ft_free(t_temp *lst_temp, t_list *lst);
 /*
 Signals
 */

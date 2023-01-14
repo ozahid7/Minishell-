@@ -6,16 +6,16 @@
 #    By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/01 18:38:23 by ajafy             #+#    #+#              #
-#    Updated: 2023/01/13 15:14:32 by ajafy            ###   ########.fr        #
+#    Updated: 2023/01/14 10:28:12 by ajafy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRC = Parsing/minishell.c Parsing/delete_quotes.c Parsing/create_lst_temp.c Parsing/remplire_env.c \
+SRC = 	minishell.c Parsing/delete_quotes.c Parsing/create_lst_temp.c Parsing/remplire_env.c \
 		Parsing/expand.c Parsing/join_temp.c Parsing/delete_spaces.c Parsing/check_redirections.c \
 		Parsing/check_redirections_utils.c Parsing/delete_node.c Parsing/remplire_list.c \
 		Parsing/redirections_split.c Parsing/redirections_split_utils.c Parsing/redirections.c \
-		Parsing/herdoc.c Parsing/signals_handler.c Parsing/free_listes.c
+		Parsing/herdoc.c Parsing/signals_handler.c Parsing/free_listes.c Parsing/minishell_utils.c
 
 OBJ = $(addprefix build/, $(SRC:.c=.o))
 
