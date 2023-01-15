@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_redirections_utils.c                         :+:      :+:    :+:   */
+/*   ft_unsignednumber.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/09 14:40:46 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/15 14:40:29 by ajafy            ###   ########.fr       */
+/*   Created: 2021/12/22 02:52:36 by ozahid-           #+#    #+#             */
+/*   Updated: 2023/01/05 02:15:29 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../minishell.h"
+#include "ft_printf.h"
 
-int	ft_lstsize_temp(t_temp *lst)
+int	ft_unsignednumber(int fd, unsigned int nb)
 {
 	int	i;
 
-	i = 1;
-	if (lst == NULL)
-		return (0);
-	while (lst->next != NULL)
+	i = 0;
+	if (nb < 10 && nb >= 0)
 	{
-		lst = (t_temp *) lst->next;
-		i++;
+		i += ft_putchar(fd, nb + 48);
+	}
+	else
+	{
+		i += ft_putnbr(fd, nb / 10);
+		i += ft_putnbr(fd, nb % 10);
 	}
 	return (i);
 }

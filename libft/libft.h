@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 15:46:44 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/14 12:28:35 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/15 15:10:36 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 typedef struct s_red
 {
 	char			*file_name;
-	int				type_redirection;
+	int				type_red;
 	int				fd;
 	struct s_red	*next;
 }	t_red;

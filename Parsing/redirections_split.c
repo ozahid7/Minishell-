@@ -6,11 +6,11 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:08:32 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/13 15:10:09 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/15 15:13:04 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/minishell.h"
+#include"../minishell.h"
 
 t_red	*ft_lstnew_red(void *content, int type, int fd)
 {
@@ -20,7 +20,7 @@ t_red	*ft_lstnew_red(void *content, int type, int fd)
 	if (!newlst)
 		return (NULL);
 	newlst->file_name = content;
-	newlst->type_redirection = type;
+	newlst->type_red = type;
 	newlst->fd = fd;
 	newlst->next = NULL;
 	return (newlst);

@@ -6,11 +6,11 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 11:01:09 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/13 15:10:20 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/15 14:41:44 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/minishell.h"
+#include"../minishell.h"
 
 t_env	*lstnew_env(char **content)
 {

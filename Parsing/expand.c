@@ -6,11 +6,11 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 00:14:19 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/13 15:10:35 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/15 14:41:06 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/minishell.h"
+#include"../minishell.h"
 
 int	ft_strcmp(const char *s1, const char *s2)
 {

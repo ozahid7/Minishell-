@@ -6,11 +6,11 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 07:06:47 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/14 12:28:57 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/15 14:41:51 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/minishell.h"
+#include"../minishell.h"
 
 void	handler_sig_herdoc(int sig)
 {

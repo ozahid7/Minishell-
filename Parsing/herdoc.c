@@ -6,11 +6,11 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 11:31:27 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/13 15:09:53 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/15 14:41:13 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/minishell.h"
+#include"../minishell.h"
 
 int	ft_check_(char *str, char *strn)
 {

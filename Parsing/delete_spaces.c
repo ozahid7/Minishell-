@@ -6,11 +6,11 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 00:43:52 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/13 15:09:40 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/15 14:41:01 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/minishell.h"
+#include"../minishell.h"
 
 char	*delete_spaces(char *str)
 {

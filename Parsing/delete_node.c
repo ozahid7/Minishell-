@@ -6,11 +6,11 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 00:10:52 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/13 15:09:31 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/15 14:40:54 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/minishell.h"
+#include"../minishell.h"
 
 t_temp	*del_next_node(t_temp *node, int i)
 {

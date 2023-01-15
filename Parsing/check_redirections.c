@@ -6,11 +6,11 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 03:22:20 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/13 15:09:18 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/15 14:40:46 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/minishell.h"
+#include"../minishell.h"
 
 t_temp	*ft_split_redirections(t_temp **alst, int *i, char q)
 {

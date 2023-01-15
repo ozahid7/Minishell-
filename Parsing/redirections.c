@@ -6,11 +6,11 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:08:56 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/13 15:14:02 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/15 14:41:39 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/minishell.h"
+#include"../minishell.h"
 
 void	herdoc(t_temp *lst, int *fds, t_env **head_env, int i)
 {

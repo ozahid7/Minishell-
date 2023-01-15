@@ -6,11 +6,11 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 09:27:39 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/13 15:10:04 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/15 14:41:31 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/minishell.h"
+#include"../minishell.h"
 
 t_temp	*ft_take_redirections_(t_temp *lst, t_red **red_t, int j, int *i)
 {

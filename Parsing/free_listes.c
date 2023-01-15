@@ -6,11 +6,11 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 02:21:18 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/13 15:09:48 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/15 14:41:09 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/minishell.h"
+#include"../minishell.h"
 
 void	free_lst_temp(t_temp *head_temp)
 {

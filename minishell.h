@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:32:59 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/14 10:50:29 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/15 15:43:49 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,27 @@
 # include<curses.h>
 # include<stdlib.h>
 # include<unistd.h>
+# include<stdarg.h>
 # include <readline/readline.h>
 # include <readline/history.h>
-# include "../libft/libft.h"
+# include "libft/libft.h"
+# include "printf_/ft_printf.h"
 
 # define INFILE 4
 # define OUTFILE 7
 # define HERDOC 44
 # define APPAND 77
+# define PATH "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki"
 
 int	g_exit_status;
+
+typedef struct s_pip
+{
+	int	save;
+	int	cout;
+	int	pin;
+	int	id;
+}	t_pip;
 
 /*
 	Redirections_list
@@ -77,6 +88,8 @@ typedef struct s_env
 {
 	char			*key;
 	char			*value;
+	int				pos;
+	int				i;
 	struct s_env	*next;
 }	t_env;
 
@@ -139,5 +152,59 @@ free
 
 void	free_lst_temp(t_temp *head_temp);
 void	free_lst(t_list *lst);
+
+/*
+exec
+*/
+
+//....................../redirections/..................
+int		ft_out(t_red *red);
+int		ft_in(t_red	*red);
+int		ft_appand(t_red	*red);
+int		ft_execred(t_list *lst);
+//....................../execution/.....................
+char	*get_path(t_env *data);
+char	*path(t_env *data, char *lst);
+t_env	*init_env(char **env);
+int		ft_exec(t_list *lst, t_env **env);
+char	**get_arg(t_env *env);
+//./execution/built-ins/cd-env-pwd-echo
+int		ft_run(t_list *lst, t_env **env);
+void	ft_cd(t_env *env, t_list *lst);
+char	*get_oldp(t_env *env);
+void	ft_echo(char **content);
+void	ft_pwd(t_list *lst);
+char	*ft_change_pwd(char *cmd, char *pwd, t_env *env);
+void	ftenv(t_env *env);
+char	*ft_getpwd(t_env *env);
+int		is_builtins(t_list *lst);
+void	ft_free_env(t_env *env);
+int		ft_env_cmd(t_env *env, char **content);
+void	print_env(t_env *env);
+t_env	*ft_env(char **nv);
+//builtins export
+void	ft_exp(t_env *env);
+void	ft_addnode(t_env *env, char *cnt);
+void	ft_printexport(t_env *env);
+int		check_name(t_env *env, char *name);
+int		env_len(t_env *env);
+int		check_char(char *content, char c);
+void	reset_pos(t_env *env);
+char	*free_and(char *ptr);
+char	*dup_name(char *src);
+char	*check_plus(char *content);
+t_env	*return_node(t_env *env, char *name);
+int		is_valid(char *name, char *content);
+//builtins unset
+void	ft_envdelone(t_env *env, void (*del)(void*));
+t_env	*ft_envnew(char *content, char *name);
+void	ft_unset(t_env **env, t_list *lst);
+//./execution/check_redirections.c
+int		check_redirections(t_red *red);
+int		create_file(t_red *red, int fd);
+//./execution/pipes
+int		ft_pipe(int *fd, t_list *lst, t_env *env);
+void	ft_dup(int *fd, int c, int p);
+int		ft_fork(t_pip p, t_env *env, t_list *lst, int *fd);
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 23:10:07 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/13 15:09:35 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/15 14:40:58 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/minishell.h"
+#include"../minishell.h"
 
 int	is_space_pipe(char c)
 {

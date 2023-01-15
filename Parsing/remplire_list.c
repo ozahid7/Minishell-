@@ -6,11 +6,11 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 01:42:02 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/13 15:10:24 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/15 14:41:48 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/minishell.h"
+#include"../minishell.h"
 
 int	is_pipe(char *str, int i)
 {

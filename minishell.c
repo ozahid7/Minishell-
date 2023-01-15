@@ -6,11 +6,11 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:33:06 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/14 10:44:17 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/15 15:57:18 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"include/minishell.h"
+#include"minishell.h"
 
 int	main(int ac, char **av, char **env)
 {
@@ -31,6 +31,9 @@ int	main(int ac, char **av, char **env)
 		if (ft_remplire_listes(str, &lst_temp, &lst_env) != -1)
 		{
 			lst = remplire_list(lst, &lst_temp);
+			ft_exec(lst, &lst_env);
+			while (waitpid(-1, 0, 0) != -1)
+				;
 		}	
 		ft_free(lst_temp, lst);
 	}

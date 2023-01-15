@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_redirections_utils.c                         :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/09 14:40:46 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/15 14:40:29 by ajafy            ###   ########.fr       */
+/*   Created: 2021/12/19 17:02:10 by ozahid-           #+#    #+#             */
+/*   Updated: 2023/01/05 02:11:47 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../minishell.h"
+#include "ft_printf.h"
 
-int	ft_lstsize_temp(t_temp *lst)
+int	ft_putstr(int fd, char *str)
 {
 	int	i;
 
-	i = 1;
-	if (lst == NULL)
-		return (0);
-	while (lst->next != NULL)
+	i = 0;
+	if (str == NULL)
 	{
-		lst = (t_temp *) lst->next;
+		write(fd, "(null)", 6);
+		return (6);
+	}
+	while (str[i])
+	{
+		write(fd, &str[i], 1);
 		i++;
 	}
 	return (i);

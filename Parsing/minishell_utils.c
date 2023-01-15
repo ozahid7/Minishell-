@@ -6,11 +6,11 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 10:28:33 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/14 11:41:02 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/15 15:58:24 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/minishell.h"
+#include"../minishell.h"
 
 void	ft_exit(void)
 {
