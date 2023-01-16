@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export3.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 13:26:06 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/15 14:49:39 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/16 04:48:05 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,29 +31,32 @@ t_env	*return_node(t_env *env, char *name)
 			return (env);
 		env = env->next;
 	}
-	return (0);
+	return (NULL);
 }
 
 char	*dup_name(char *src)
 {
 	int		i;
+	int		len;
 	char	*dst;
 
 	dst = NULL;
 	i = 0;
+	len = 0;
 	dst = malloc(sizeof(char) * ft_strlen(src));
 	while (src[i] && src[i] != '=')
 	{
 		if (src[i] != '+')
-			dst[i] = src[i];
+			dst[len++] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
+	dst[len] = '\0';
 	return (dst);
 }
 
 char	*free_and(char *ptr)
 {
+	(void) ptr;
 	free(ptr);
 	return (NULL);
 }

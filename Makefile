@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+         #
+#    By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/01 18:38:23 by ajafy             #+#    #+#              #
-#    Updated: 2023/01/15 15:40:27 by ajafy            ###   ########.fr        #
+#    Updated: 2023/01/15 16:27:45 by ozahid-          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ LIBFT_DIR = Libft/
 
 EXECUTE = ./minishell
 
-INC = -I /Users/ajafy/.brew/opt/readline/include
+INC = -I /Users/$(USER)/.brew/opt/readline/include
 
 HEADER = minishell.h
 
@@ -46,7 +46,7 @@ build/%.o : %.c
 all: $(LIBFT) $(NAME)
 
 $(NAME): $(OBJ) $(HEADER)
-	@$(CC)  $(OBJ) -lreadline -L /Users/ajafy/.brew/opt/readline/lib -o \
+	@$(CC)  $(OBJ) -lreadline -L /Users/$(USER)/.brew/opt/readline/lib -o \
 	$(NAME) $(LIBFT)
 	@echo "Minishell Maked"
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   remplire_env.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 11:01:09 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/15 14:41:44 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/15 16:29:41 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ t_env	*ft_remplire_env(char **content)
 	while (content[i])
 	{
 		tab = ft_split(content[i], '=');
-		lst_addback_env(&env, lstnew_env(tab));
+		lst_addback_env(&env, ft_envnew(tab[1], tab[0]));
 		free(tab);
 		i++;
 	}

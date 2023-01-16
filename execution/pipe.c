@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipe.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 03:09:55 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/15 14:58:29 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/16 17:15:26 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	is_built(t_list *lst)
 	return (0);
 }
 
-int	ft_pipe(int *fd, t_list *lst, t_env *env)
+void	ft_pipe(int *fd, t_list *lst, t_env *env)
 {
 	t_pip	p;
 
@@ -43,7 +43,7 @@ int	ft_pipe(int *fd, t_list *lst, t_env *env)
 		if (lst->next)
 		{
 			if (pipe(fd) == -1)
-				return (perror("pipe"), 1);
+				return (perror("pipe"));
 			p.cout = fd[1];
 			p.save = fd[0];
 		}
@@ -57,5 +57,4 @@ int	ft_pipe(int *fd, t_list *lst, t_env *env)
 		p.pin = p.save;
 	}
 	close(p.save);
-	return (0);
 }

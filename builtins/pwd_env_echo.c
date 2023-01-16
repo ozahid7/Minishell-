@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pwd_env_echo.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:04:41 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/15 14:52:15 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/16 16:50:08 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ftenv(t_env *env)
 	{
 		if (env->value != NULL)
 			fprint(1, "%s=%s \n", env->key, env->value);
+		else if (env->i)
+			fprint(1, "%s=\n", env->key);
 		env = env->next;
 	}
 }
@@ -27,6 +29,8 @@ void	ft_echo(char **content)
 	int	i;
 
 	i = 1;
+	if (!content[i])
+		return (ft_putstr_fd("\n", 1));
 	if (!ft_strcmp(content[i], "-n"))
 	{
 		i = 2;

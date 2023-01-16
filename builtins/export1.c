@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export1.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 13:20:35 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/15 14:47:50 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/16 16:38:21 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,10 @@ void	ft_printexport(t_env *env)
 {
 	ft_putstr_fd("declare -x ", 1);
 	ft_putstr_fd(env->key, 1);
-	if (env->i == 1)
-		ft_putstr_fd("=\"\"", 1);
-	if (env->value != NULL)
+	if (env->value || env->i)
 		ft_putstr_fd("=\"", 1);
 	ft_putstr_fd(env->value, 1);
-	if (env->value != NULL)
+	if (env->value || env->i)
 		ft_putstr_fd("\"", 1);
 	ft_putstr_fd("\n", 1);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:32:59 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/15 15:43:49 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/16 17:09:45 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,6 +168,7 @@ char	*path(t_env *data, char *lst);
 t_env	*init_env(char **env);
 int		ft_exec(t_list *lst, t_env **env);
 char	**get_arg(t_env *env);
+t_env	*empty_env(t_env *lnv, t_env *new);
 //./execution/built-ins/cd-env-pwd-echo
 int		ft_run(t_list *lst, t_env **env);
 void	ft_cd(t_env *env, t_list *lst);
@@ -184,7 +185,7 @@ void	print_env(t_env *env);
 t_env	*ft_env(char **nv);
 //builtins export
 void	ft_exp(t_env *env);
-void	ft_addnode(t_env *env, char *cnt);
+int		ft_addnode(t_env *env, char *cnt);
 void	ft_printexport(t_env *env);
 int		check_name(t_env *env, char *name);
 int		env_len(t_env *env);
@@ -203,7 +204,7 @@ void	ft_unset(t_env **env, t_list *lst);
 int		check_redirections(t_red *red);
 int		create_file(t_red *red, int fd);
 //./execution/pipes
-int		ft_pipe(int *fd, t_list *lst, t_env *env);
+void	ft_pipe(int *fd, t_list *lst, t_env *env);
 void	ft_dup(int *fd, int c, int p);
 int		ft_fork(t_pip p, t_env *env, t_list *lst, int *fd);
 

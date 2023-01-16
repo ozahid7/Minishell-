@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execve.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/15 15:45:09 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/16 17:16:50 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int	ft_fork(t_pip p, t_env *env, t_list *lst, int *fd)
 		else
 		{
 			if (lst->red && ft_execred(lst) == 1)
-				exit(1);
+				exit (1);
 			execve(path(env, *lst->cmd), lst->cmd, arg);
 		}
 		exit(0);

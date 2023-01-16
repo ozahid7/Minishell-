@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 19:42:11 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/15 15:41:08 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/16 16:48:01 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	is_valid(char *name, char *content)
 
 	str = NULL;
 	i = 1;
-	if (!content)
+	if (content)
 		str = ft_strchr(content, '+');
 	if (name[0] != '_' && !ft_isalpha(name[0]))
 		return (1);
@@ -28,7 +28,7 @@ int	is_valid(char *name, char *content)
 		return (1);
 	while (name[i])
 	{
-		if (ft_isalpha(name[i] && ft_isdigit(name[i])))
+		if (!ft_isalnum(name[i]))
 			return (1);
 		i++;
 	}
@@ -48,9 +48,34 @@ void	ft_join(t_env *update, char *content, char *name)
 			join = ft_strjoin(ft_strdup(""), cnt1);
 		else
 			join = ft_strjoin(update->value, cnt1);
-		free(update->value);
+		// free(update->value);
 		update->value = join;
 		free(name);
+	}
+}
+
+void	ft_update(t_env *env, char *content, char *name)
+{
+	char	*str;
+	t_env	*tmp;
+
+	str = NULL;
+	tmp = env;
+	tmp = return_node(env, name);
+	if (content)
+		str = ft_strchr(content, '=');
+	if (str && check_name(env, name))
+	{
+		if (str[0] == '=' && str[1] == '\0')
+		{
+			tmp->i = 1;
+			tmp->value = NULL;
+		}
+		else if (str[0] == '=' && str[1] != '\0')
+		{
+			tmp->i = 1;
+			tmp->value = ft_strdup(++str);
+		}
 	}
 }
 
@@ -69,7 +94,7 @@ char	*get_content(char *content, int *n)
 	return (NULL);
 }
 
-void	ft_addnode(t_env *env, char *cnt)
+int	ft_addnode(t_env *env, char *cnt)
 {
 	t_env	*new;
 	t_env	*update;
@@ -77,16 +102,16 @@ void	ft_addnode(t_env *env, char *cnt)
 	char	*content;
 	int		n;
 
-	new = NULL;
 	n = 0;
+	new = NULL;
 	name = dup_name(cnt);
 	if (is_valid(name, cnt))
-	{
-		fprint(2, "minishell: export: %s: not valid identifier\n", cnt);
-		return ;
-	}
+		return (fprint(2, "minishell: export: %s\
+		: not valid identifier\n", cnt), 1);
 	update = return_node(env, name);
 	content = get_content(cnt, &n);
+	if (!check_plus(cnt))
+		ft_update(env, cnt, name);
 	if (check_name(env, name) == 0 && content != NULL && content[0] == '\0')
 		content = free_and(content);
 	ft_join(update, cnt, name);
@@ -96,4 +121,5 @@ void	ft_addnode(t_env *env, char *cnt)
 		new->i = n;
 		lst_addback_env(&env, new);
 	}
+	return (0);
 }
