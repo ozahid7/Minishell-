@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/16 17:16:50 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/16 17:26:15 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_env	*init_env(char **env)
 	i = 1;
 	if (!*env)
 	{
+		
 		lnv = NULL;
 		new = ft_envnew(ft_strdup(PATH), ft_strdup("PATH"));
 		lst_addback_env(&lnv, new);
