@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 16:33:35 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/16 17:13:27 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/16 20:41:54 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,23 @@ int	ft_in(t_red	*red)
 	return (0);
 }
 
-int	ft_appand(t_red	*red)
+int	ft_apnd_hrdc(t_red	*red)
 {
 	int	fd;
 
-	fd = open(red->file_name, O_CREAT | O_RDWR | O_APPEND);
-	if (fd == -1)
-		return (perror(""), 1);
-	dup2(fd, 1);
-	close(fd);
+	if (red->type_red == 77)
+	{
+		fd = open(red->file_name, O_CREAT | O_RDWR | O_APPEND);
+		if (fd == -1)
+			return (perror(""), 1);
+		dup2(fd, 1);
+		close(fd);
+	}
+	else if (red->type_red == 44)
+	{
+		dup2(red->fd, 0);
+		close(red->fd);
+	}
 	return (0);
 }
 
@@ -54,19 +62,18 @@ int	ft_execred(t_list *lst)
 {
 	if (lst->red)
 	{
-		if (lst->red->type_red == 11)
+		if (lst->red->type_red == 7)
 			return (ft_out(lst->red));
-		if (lst->red->type_red == 10)
+		if (lst->red->type_red == 4)
 			return (ft_in(lst->red));
-		if (lst->red->type_red == 13)
-			return (ft_appand(lst->red));
+		if (lst->red->type_red == 77 || lst->red->type_red == 44)
+			return (ft_apnd_hrdc(lst->red));
 	}
 	return (0);
 }
 
 t_env	*empty_env(t_env *lnv, t_env *new)
 {
-	lnv = NULL;
 	new = ft_envnew(ft_strdup(PATH), ft_strdup("PATH"));
 	lst_addback_env(&lnv, new);
 	new = ft_envnew(NULL, ft_strdup("OLDPWD"));

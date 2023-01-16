@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirections.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:08:56 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/15 14:41:39 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/16 20:21:51 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	herdoc_in(t_temp **lst, int *fds, t_env **head_env)
 	if (ft_valide_herdoc(*lst) == 0)
 		exit (0);
 	herdoc(*lst, fds, head_env, 0);
+	close(fds[1]);
 	exit (0);
 }
 
@@ -86,6 +87,7 @@ int	redirections(t_temp *lst, t_env **head_env)
 			signal(SIGINT, handler_sig);
 			if (id != 0)
 				return (g_exit_status = 1, -1);
+			close(fds[1]);
 		}
 		lst = lst->next;
 	}

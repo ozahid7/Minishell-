@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirections_split_utils.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 09:27:39 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/15 14:41:31 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/16 20:12:03 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_temp	*ft_take_redirections_(t_temp *lst, t_red **red_t, int j, int *i)
 	if (j == 0)
 	{
 		ft_lstadd_back_red(red_t, ft_lstnew_red(ft_strdup(lst->next->content), \
-		ft_type_redirection(lst->content), 0));
+		ft_type_redirection(lst->content), lst->next->fd));
 		lst->red = *red_t;
 		lst = del_next_node(lst, 0);
 		free(lst->content);
@@ -27,7 +27,7 @@ t_temp	*ft_take_redirections_(t_temp *lst, t_red **red_t, int j, int *i)
 	{
 		ft_lstadd_back_red(red_t, \
 		ft_lstnew_red(ft_strdup(lst->next->next->content), \
-		ft_type_redirection(lst->next->content), 0));
+		ft_type_redirection(lst->next->content), lst->next->fd));
 		lst->red = *red_t;
 		lst = del_next_node(lst, 0);
 		lst = del_next_node(lst, 0);

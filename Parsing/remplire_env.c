@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 11:01:09 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/15 16:29:41 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/16 20:35:42 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,11 @@ t_env	*ft_remplire_env(char **content)
 
 	i = 0;
 	env = NULL;
-	if (!content)
-		return (NULL);
+	if (!*content)
+	{
+		env = empty_env(env, NULL);
+		return (env);
+	}
 	while (content[i])
 	{
 		tab = ft_split(content[i], '=');
