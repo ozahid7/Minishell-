@@ -1,0 +1,4 @@
+*.o
+build
+minishell
+a.out
