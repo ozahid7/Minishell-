@@ -3,3 +3,4 @@ build
 minishell
 a.out
 libft.a
+.DS_Store
