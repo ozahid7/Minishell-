@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/16 17:26:15 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/16 20:42:40 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,11 @@ t_env	*init_env(char **env)
 	int		i;
 
 	i = 1;
+	new = NULL;
+	lnv = NULL;
 	if (!*env)
 	{
-		
-		lnv = NULL;
-		new = ft_envnew(ft_strdup(PATH), ft_strdup("PATH"));
-		lst_addback_env(&lnv, new);
-		new = ft_envnew(NULL, ft_strdup("OLDPWD"));
-		lst_addback_env(&lnv, new);
-		new = ft_envnew(getcwd(NULL, 0), ft_strdup("PWD"));
-		lst_addback_env(&lnv, new);
+		lnv = empty_env(lnv, new);
 		return (lnv);
 	}
 	str = ft_split(env[0], '=');
@@ -89,7 +84,7 @@ char	*path(t_env *data, char *cmd)
 	return (path[i]);
 }
 
-int	ft_fork(t_pip p, t_env *env, t_list *lst, int *fd)
+int	ft_fork(t_pip p, t_env *env, t_list *cmd, int *fd)
 {
 	char	**arg;
 
@@ -100,13 +95,14 @@ int	ft_fork(t_pip p, t_env *env, t_list *lst, int *fd)
 	else if (p.id == 0)
 	{
 		ft_dup(fd, p.cout, p.pin);
-		if (is_builtins(lst))
-			ft_run(lst, &env);
+		if (is_builtins(cmd))
+			ft_run(cmd, &env);
 		else
 		{
-			if (lst->red && ft_execred(lst) == 1)
-				exit (1);
-			execve(path(env, *lst->cmd), lst->cmd, arg);
+			if (cmd->red && ft_execred(cmd) == 1)
+				exit(1);
+			execve(path(env, *cmd->cmd), cmd->cmd, arg);
+			exit (0);
 		}
 		exit(0);
 	}

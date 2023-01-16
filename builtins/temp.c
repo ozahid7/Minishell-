@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 15:39:31 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/16 16:50:31 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/16 20:44:48 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ char	**get_arg(t_env *env)
 	char	**str;
 	int		len;
 	int		i;
-	// char	*tmp;
 
 	i = 0;
 	len = env_len(env);
@@ -50,9 +49,7 @@ char	**get_arg(t_env *env)
 	{
 		str[i] = ft_strdup(env->key);
 		str[i] = ft_strjoin(str[i], "=");
-		//free(str[i]);
 		str[i] = ft_strjoin(str[i], env->value);
-		//free(tmp);
 		i++;
 		env = env->next;
 	}

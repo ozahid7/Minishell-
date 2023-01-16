@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 19:42:11 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/16 16:48:01 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/16 20:45:01 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	ft_join(t_env *update, char *content, char *name)
 			join = ft_strjoin(ft_strdup(""), cnt1);
 		else
 			join = ft_strjoin(update->value, cnt1);
-		// free(update->value);
 		update->value = join;
 		free(name);
 	}
