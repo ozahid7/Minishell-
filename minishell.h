@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:32:59 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/16 17:09:45 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/17 01:35:49 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,6 +162,7 @@ int		ft_out(t_red *red);
 int		ft_in(t_red	*red);
 int		ft_appand(t_red	*red);
 int		ft_execred(t_list *lst);
+void	exit_with(int nb);
 //....................../execution/.....................
 char	*get_path(t_env *data);
 char	*path(t_env *data, char *lst);

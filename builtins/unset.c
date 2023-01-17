@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   unset.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:16:01 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/15 14:53:32 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/16 23:30:43 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ t_env	*del_node(t_env **env, char *name)
 	{
 		target = *env;
 		*env = target->next;
-		printf ("helo\n");
 	}
 	else
 	{

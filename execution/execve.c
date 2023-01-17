@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/16 20:42:40 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/17 02:55:58 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,32 +42,32 @@ t_env	*init_env(char **env)
 char	*get_path(t_env *data)
 {
 	int		i;
-	t_env	*tmp;
 	char	*str;
 
-	tmp = data;
 	i = 0;
 	while (data)
 	{
-		if (ft_strcmp(data->key, "PATH") == 0)
+		// printf("%d\n", data->key == NULL);
+		if (data->key && ft_strcmp(data->key, "PATH") == 0)
 		{
 			str = data->value;
 		}
 		data = data->next;
 	}
-	data = tmp;
 	return (str);
 }
 
 char	*path(t_env *data, char *cmd)
 {
 	char	**path;
+	// t_env	*node;
 	int		i;
 
 	i = 0;
-	data->value = get_path(data);
-	if (access(cmd, X_OK || F_OK) == 0)
-		return (cmd);
+	data = return_node(data, "PATH");
+	if (!data)
+		return (printf("no such a file or directory\n"), cmd);
+	//tfo 3la mok a 9li9l
 	path = ft_split(data->value, ':');
 	while (path[i])
 	{
@@ -99,13 +99,24 @@ int	ft_fork(t_pip p, t_env *env, t_list *cmd, int *fd)
 			ft_run(cmd, &env);
 		else
 		{
-			if (cmd->red && ft_execred(cmd) == 1)
-				exit(1);
-			execve(path(env, *cmd->cmd), cmd->cmd, arg);
-			exit (0);
+		if (check_char(*cmd->cmd, '/') )
+		{
+			if (access(*cmd->cmd, X_OK || F_OK) == -1)
+			{
+				perror(*cmd->cmd);
+				exit_with(127);
+			}
+			execve(*cmd->cmd, cmd->cmd, arg);
 		}
+			if (cmd->red && ft_execred(cmd) == 1)
+				exit_with(1);
+			execve(path(env, *cmd->cmd), cmd->cmd, arg);
+			exit(0);
+		}
+		ft_freetab(arg);
 		exit(0);
 	}
+	ft_freetab(arg);
 	return (0);
 }
 

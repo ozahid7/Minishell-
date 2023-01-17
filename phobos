@@ -1,0 +1,11 @@
+Makefile
+Parsing
+build
+builtins
+execution
+libft
+minishell
+minishell.c
+minishell.h
+phobos
+printf_

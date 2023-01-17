@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:33:06 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/15 15:57:18 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/17 01:24:06 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(int ac, char **av, char **env)
 	t_list	*lst;
 	t_env	*lst_env;
 	char	*str;
+	int		flag;
 
 	lst_env = after_while(ac, av, env);
 	while (1)
@@ -32,8 +33,10 @@ int	main(int ac, char **av, char **env)
 		{
 			lst = remplire_list(lst, &lst_temp);
 			ft_exec(lst, &lst_env);
-			while (waitpid(-1, 0, 0) != -1)
+			while (waitpid(-1, &flag, 0) != -1)
 				;
+			if (WEXITSTATUS(flag) == 2)
+				ft_run(lst, &lst_env);
 		}	
 		ft_free(lst_temp, lst);
 	}

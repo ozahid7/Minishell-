@@ -6,7 +6,7 @@
 #    By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/01 18:38:23 by ajafy             #+#    #+#              #
-#    Updated: 2023/01/15 16:27:45 by ozahid-          ###   ########.fr        #
+#    Updated: 2023/01/17 02:04:31 by ozahid-          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ CC = cc
 
 NAME = minishell
 
-CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror  
 
 LIBFT = Libft/libft.a 
 
@@ -46,7 +46,7 @@ build/%.o : %.c
 all: $(LIBFT) $(NAME)
 
 $(NAME): $(OBJ) $(HEADER)
-	@$(CC)  $(OBJ) -lreadline -L /Users/$(USER)/.brew/opt/readline/lib -o \
+	@$(CC)  $(OBJ) -fsanitize=address -lreadline -L /Users/$(USER)/.brew/opt/readline/lib -o \
 	$(NAME) $(LIBFT)
 	@echo "Minishell Maked"
 
