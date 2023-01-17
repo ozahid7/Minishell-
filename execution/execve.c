@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/17 02:55:58 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/17 16:50:19 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ char	*path(t_env *data, char *cmd)
 	data = return_node(data, "PATH");
 	if (!data)
 		return (printf("no such a file or directory\n"), cmd);
-	//tfo 3la mok a 9li9l
 	path = ft_split(data->value, ':');
 	while (path[i])
 	{
