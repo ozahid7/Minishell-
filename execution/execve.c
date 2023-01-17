@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/17 16:50:19 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/17 17:04:01 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ char	*get_path(t_env *data)
 	i = 0;
 	while (data)
 	{
-		// printf("%d\n", data->key == NULL);
 		if (data->key && ft_strcmp(data->key, "PATH") == 0)
 		{
 			str = data->value;
