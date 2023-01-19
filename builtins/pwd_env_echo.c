@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pwd_env_echo.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:04:41 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/16 16:50:08 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/19 16:46:44 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,20 @@ void	ft_echo(char **content)
 	{
 		i = 2;
 		while (content[i])
+		{
+			if (i != 2)
+				fprint(1, " ");
 			fprint(1, "%s", content[i++]);
+		}
 	}
 	else
 	{
 		while (content[i])
+		{	
+			if (i != 1)
+				fprint(1, " ");
 			fprint(1, "%s", content[i++]);
+		}
 		ft_putstr_fd("\n", 1);
 	}	
 }
@@ -60,4 +68,34 @@ void	ft_pwd(t_list *lst)
 		ft_putstr_fd(pwd, 1);
 		ft_putstr_fd("\n", 1);
 	}
+}
+
+int	check_for_exit(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+void	f_exit(t_list *cmd)
+{
+	fprint(2, "exit\n");
+	if (cmd->cmd[1])
+	{
+		if (check_for_exit(cmd->cmd[1]))
+			fprint(2, "Minishell: %s: %s: numeric argument required\n",\
+			 cmd->cmd[0], cmd->cmd[1]);
+		else
+			exit_with(ft_atoi(cmd->cmd[1]));
+	}
+	exit_with(2);
 }

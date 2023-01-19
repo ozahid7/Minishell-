@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execve.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/19 13:15:56 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/19 16:54:23 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,10 @@ int	ft_fork(t_pip p, t_env *env, t_list *cmd, int *fd)
 			if (execve(pat, cmd->cmd, arg) == -1)
 			{
 				perror(*cmd->cmd);
-				exit_with (0);
+				exit_with (127);
 			}
 		}
-		exit(0);
+		//exit_with(0);
 	}
 	ft_freetab(arg);
 	return (0);
@@ -94,6 +94,6 @@ int	ft_exec(t_list *lst, t_env **env)
 {
 	int	fd[2];
 
-	ft_pipe(fd, lst, *env);
+	ft_pipe(fd, lst, env);
 	return (0);
 }

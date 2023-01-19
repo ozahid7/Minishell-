@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_run.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 00:20:46 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/18 18:00:19 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/19 17:07:19 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ int	ft_run(t_list *lst, t_env **env)
 			ft_addnode(*env, lst->cmd[i++]);
 	}
 	if (ft_strcmp(lst->cmd[0], "exit") == 0)
-		exit(2);
+		f_exit(lst);
 	return (0);
 }

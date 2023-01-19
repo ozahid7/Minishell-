@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:32:59 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/19 13:06:57 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/19 16:11:47 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,6 +173,7 @@ char	**get_arg(t_env *env);
 t_env	*empty_env(t_env *lnv, t_env *new);
 //./execution/built-ins/cd-env-pwd-echo
 int		ft_run(t_list *lst, t_env **env);
+void	f_exit(t_list *cmd);
 void	ft_cd(t_env *env, t_list *lst);
 char	*get_oldp(t_env *env);
 void	ft_echo(char **content);
@@ -206,7 +207,7 @@ void	ft_unset(t_env **env, t_list *lst);
 int		check_redirections(t_red *red);
 int		create_file(t_red *red, int fd);
 //./execution/pipes
-void	ft_pipe(int *fd, t_list *lst, t_env *env);
+void	ft_pipe(int *fd, t_list *lst, t_env **head_env);
 void	ft_dup(int *fd, int c, int p);
 int		ft_fork(t_pip p, t_env *env, t_list *lst, int *fd);
 
