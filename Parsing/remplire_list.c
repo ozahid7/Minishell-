@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 01:42:02 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/19 23:12:28 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/19 23:22:26 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	**ft_split_list_utils(t_temp *lst, int len, t_red **head)
 		return (NULL);
 	while (i < len && lst)
 	{
-		if (ft_strcmp(lst->content, " ") != 0)
+		if (ft_strcmp(lst->content, " ") != 0 || lst->i != 0)
 		{
 			s[i++] = lst->content;
 			if (lst->red)
@@ -76,7 +76,7 @@ t_list	*ft_split_list(t_list *lst, t_temp *lst_temp)
 		temp = lst_temp;
 		while (lst_temp && (is_pipe(lst_temp->content, lst_temp->i) == 0))
 		{
-			if (ft_strcmp(lst_temp->content, " ") != 0)
+			if (ft_strcmp(lst_temp->content, " ") != 0 || lst_temp->i != 0)
 				k++;
 			lst_temp = lst_temp->next;
 		}
