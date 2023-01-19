@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 11:31:27 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/19 20:19:27 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/19 20:27:48 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,12 @@ int	check_operator_(t_temp *lst, int p, int i)
 		{
 			if (i == 0)
 				if (ft_strcmp(lst->content, "|") == 0 && p > 1)
-					return (fprint(2, "Minishell: syntax error near unexpected token |\n"),
-				g_exit_status = 258, -1);
+					return (-1);
 			if (i == len - 1)
-				return (fprint(2, "Minishell: syntax error near unexpected token |\n"),
-				g_exit_status = 258, -1);
+				return (-1);
 			if (lst->next->i == 0)
 				if (ft_check_(lst->content, lst->next->content) == -1)
-					return (fprint(2, "Minishell: syntax error near unexpected token |\n"),
-				g_exit_status = 258, -1);
+					return (-1);
 		}
 		i++;
 		if ((ft_strcmp(lst->content, "|") == 0))

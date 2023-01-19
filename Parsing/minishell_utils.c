@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 10:28:33 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/19 20:15:37 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/19 20:37:40 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_exit(void)
 {
 	printf("\033[13C\033[1Aexit\n");
-	exit (0);
+	exit (g_exit_status);
 }
 
 int	ft_check_quotes(char *str)
@@ -56,7 +56,7 @@ int	ft_remplire_listes(char *s, t_temp **lst_t, t_env **lst_e)
 	ft_expand(lst_e, lst_t);
 	ft_join_lst(lst_t);
 	if (check_operator_(*lst_t, 0, 0) == -1)
-		return (write(2, "Erreur\n", 7), g_exit_status = 258, -1);
+		return (fprint(2, "Minishell: syntax error near unexpected token |\n"), g_exit_status = 258, -1);
 	ft_take_redirections(&lst, 0);
 	return (1);
 }

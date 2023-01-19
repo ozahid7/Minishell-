@@ -1,0 +1,171 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/ozahid-/Desktop/Minishell'
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C Libft/
+make[1]: Entering directory `/Users/ozahid-/Desktop/Minishell/libft'
+cc -Wall -Wextra -Werror -c ft_isalpha.c 
+cc -Wall -Wextra -Werror -c ft_memchr.c 
+cc -Wall -Wextra -Werror -c ft_strchr.c 
+cc -Wall -Wextra -Werror -c ft_strlen.c 
+cc -Wall -Wextra -Werror -c ft_tolower.c 
+cc -Wall -Wextra -Werror -c ft_atoi.c 
+cc -Wall -Wextra -Werror -c ft_isascii.c 
+cc -Wall -Wextra -Werror -c ft_memcmp.c 
+cc -Wall -Wextra -Werror -c ft_strdup.c 
+cc -Wall -Wextra -Werror -c ft_strncmp.c 
+cc -Wall -Wextra -Werror -c ft_toupper.c 
+cc -Wall -Wextra -Werror -c ft_bzero.c 
+cc -Wall -Wextra -Werror -c ft_isdigit.c 
+cc -Wall -Wextra -Werror -c ft_memcpy.c 
+cc -Wall -Wextra -Werror -c ft_strlcat.c 
+cc -Wall -Wextra -Werror -c ft_strnstr.c 
+cc -Wall -Wextra -Werror -c ft_isalnum.c 
+cc -Wall -Wextra -Werror -c ft_isprint.c 
+cc -Wall -Wextra -Werror -c ft_memset.c 
+cc -Wall -Wextra -Werror -c ft_strlcpy.c 
+cc -Wall -Wextra -Werror -c ft_strrchr.c 
+cc -Wall -Wextra -Werror -c ft_memmove.c 
+cc -Wall -Wextra -Werror -c ft_calloc.c 
+cc -Wall -Wextra -Werror -c ft_substr.c 
+cc -Wall -Wextra -Werror -c ft_strjoin.c 
+cc -Wall -Wextra -Werror -c ft_putchar_fd.c 
+cc -Wall -Wextra -Werror -c ft_putstr_fd.c 
+cc -Wall -Wextra -Werror -c ft_putnbr_fd.c 
+cc -Wall -Wextra -Werror -c ft_strtrim.c 
+cc -Wall -Wextra -Werror -c ft_putendl_fd.c 
+cc -Wall -Wextra -Werror -c ft_striteri.c 
+cc -Wall -Wextra -Werror -c ft_strmapi.c 
+cc -Wall -Wextra -Werror -c ft_split.c 
+cc -Wall -Wextra -Werror -c ft_split_utils.c 
+cc -Wall -Wextra -Werror -c ft_itoa.c 
+ar -rc libft.a ft_isalpha.o ft_memchr.o ft_strchr.o ft_strlen.o ft_tolower.o ft_atoi.o ft_isascii.o ft_memcmp.o ft_strdup.o ft_strncmp.o ft_toupper.o ft_bzero.o ft_isdigit.o ft_memcpy.o ft_strlcat.o ft_strnstr.o ft_isalnum.o ft_isprint.o ft_memset.o ft_strlcpy.o ft_strrchr.o ft_memmove.o ft_calloc.o ft_substr.o ft_strjoin.o ft_putchar_fd.o ft_putstr_fd.o ft_putnbr_fd.o ft_strtrim.o ft_putendl_fd.o ft_striteri.o ft_strmapi.o ft_split.o ft_split_utils.o ft_itoa.o
+make[1]: Leaving directory `/Users/ozahid-/Desktop/Minishell/libft'
+/Applications/Xcode.app/Contents/Developer/usr/bin/make bonus -C Libft/
+make[1]: Entering directory `/Users/ozahid-/Desktop/Minishell/libft'
+cc -Wall -Wextra -Werror -c ft_isalpha.c 
+cc -Wall -Wextra -Werror -c ft_memchr.c 
+cc -Wall -Wextra -Werror -c ft_strchr.c 
+cc -Wall -Wextra -Werror -c ft_strlen.c 
+cc -Wall -Wextra -Werror -c ft_tolower.c 
+cc -Wall -Wextra -Werror -c ft_atoi.c 
+cc -Wall -Wextra -Werror -c ft_isascii.c 
+cc -Wall -Wextra -Werror -c ft_memcmp.c 
+cc -Wall -Wextra -Werror -c ft_strdup.c 
+cc -Wall -Wextra -Werror -c ft_strncmp.c 
+cc -Wall -Wextra -Werror -c ft_toupper.c 
+cc -Wall -Wextra -Werror -c ft_bzero.c 
+cc -Wall -Wextra -Werror -c ft_isdigit.c 
+cc -Wall -Wextra -Werror -c ft_memcpy.c 
+cc -Wall -Wextra -Werror -c ft_strlcat.c 
+cc -Wall -Wextra -Werror -c ft_strnstr.c 
+cc -Wall -Wextra -Werror -c ft_isalnum.c 
+cc -Wall -Wextra -Werror -c ft_isprint.c 
+cc -Wall -Wextra -Werror -c ft_memset.c 
+cc -Wall -Wextra -Werror -c ft_strlcpy.c 
+cc -Wall -Wextra -Werror -c ft_strrchr.c 
+cc -Wall -Wextra -Werror -c ft_memmove.c 
+cc -Wall -Wextra -Werror -c ft_calloc.c 
+cc -Wall -Wextra -Werror -c ft_substr.c 
+cc -Wall -Wextra -Werror -c ft_strjoin.c 
+cc -Wall -Wextra -Werror -c ft_putchar_fd.c 
+cc -Wall -Wextra -Werror -c ft_putstr_fd.c 
+cc -Wall -Wextra -Werror -c ft_putnbr_fd.c 
+cc -Wall -Wextra -Werror -c ft_strtrim.c 
+cc -Wall -Wextra -Werror -c ft_putendl_fd.c 
+cc -Wall -Wextra -Werror -c ft_striteri.c 
+cc -Wall -Wextra -Werror -c ft_strmapi.c 
+cc -Wall -Wextra -Werror -c ft_split.c 
+cc -Wall -Wextra -Werror -c ft_split_utils.c 
+cc -Wall -Wextra -Werror -c ft_itoa.c 
+ar -rc libft.a ft_isalpha.o ft_memchr.o ft_strchr.o ft_strlen.o ft_tolower.o ft_atoi.o ft_isascii.o ft_memcmp.o ft_strdup.o ft_strncmp.o ft_toupper.o ft_bzero.o ft_isdigit.o ft_memcpy.o ft_strlcat.o ft_strnstr.o ft_isalnum.o ft_isprint.o ft_memset.o ft_strlcpy.o ft_strrchr.o ft_memmove.o ft_calloc.o ft_substr.o ft_strjoin.o ft_putchar_fd.o ft_putstr_fd.o ft_putnbr_fd.o ft_strtrim.o ft_putendl_fd.o ft_striteri.o ft_strmapi.o ft_split.o ft_split_utils.o ft_itoa.o
+cc -Wall -Wextra -Werror -c ft_lstnew.c 
+cc -Wall -Wextra -Werror -c ft_lstsize.c 
+cc -Wall -Wextra -Werror -c ft_lstadd_back.c 
+cc -Wall -Wextra -Werror -c ft_lstlast.c 
+cc -Wall -Wextra -Werror -c ft_lstadd_front.c 
+cc -Wall -Wextra -Werror -c ft_lstclear.c 
+cc -Wall -Wextra -Werror -c ft_lstdelone.c 
+cc -Wall -Wextra -Werror -c ft_lstiter.c 
+cc -Wall -Wextra -Werror -c ft_lstmap.c 
+ar -rc libft.a ft_lstnew.o ft_lstsize.o ft_lstadd_back.o ft_lstlast.o ft_lstadd_front.o ft_lstclear.o ft_lstdelone.o ft_lstiter.o ft_lstmap.o
+make[1]: Leaving directory `/Users/ozahid-/Desktop/Minishell/libft'
+echo "Libft Maked"
+mkdir -p build
+cc -g -Wall -Wextra -Werror -c minishell.c -o build/minishell.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/Parsing
+cc -g -Wall -Wextra -Werror -c Parsing/delete_quotes.c -o build/Parsing/delete_quotes.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/Parsing
+cc -g -Wall -Wextra -Werror -c Parsing/create_lst_temp.c -o build/Parsing/create_lst_temp.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/Parsing
+cc -g -Wall -Wextra -Werror -c Parsing/remplire_env.c -o build/Parsing/remplire_env.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/Parsing
+cc -g -Wall -Wextra -Werror -c Parsing/expand.c -o build/Parsing/expand.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/Parsing
+cc -g -Wall -Wextra -Werror -c Parsing/join_temp.c -o build/Parsing/join_temp.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/Parsing
+cc -g -Wall -Wextra -Werror -c Parsing/delete_spaces.c -o build/Parsing/delete_spaces.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/Parsing
+cc -g -Wall -Wextra -Werror -c Parsing/check_redirections.c -o build/Parsing/check_redirections.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/Parsing
+cc -g -Wall -Wextra -Werror -c Parsing/check_redirections_utils.c -o build/Parsing/check_redirections_utils.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/Parsing
+cc -g -Wall -Wextra -Werror -c Parsing/delete_node.c -o build/Parsing/delete_node.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/Parsing
+cc -g -Wall -Wextra -Werror -c Parsing/remplire_list.c -o build/Parsing/remplire_list.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/Parsing
+cc -g -Wall -Wextra -Werror -c Parsing/redirections_split.c -o build/Parsing/redirections_split.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/Parsing
+cc -g -Wall -Wextra -Werror -c Parsing/redirections_split_utils.c -o build/Parsing/redirections_split_utils.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/Parsing
+cc -g -Wall -Wextra -Werror -c Parsing/redirections.c -o build/Parsing/redirections.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/Parsing
+cc -g -Wall -Wextra -Werror -c Parsing/herdoc.c -o build/Parsing/herdoc.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/Parsing
+cc -g -Wall -Wextra -Werror -c Parsing/signals_handler.c -o build/Parsing/signals_handler.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/Parsing
+cc -g -Wall -Wextra -Werror -c Parsing/free_listes.c -o build/Parsing/free_listes.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/Parsing
+cc -g -Wall -Wextra -Werror -c Parsing/minishell_utils.c -o build/Parsing/minishell_utils.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/execution
+cc -g -Wall -Wextra -Werror -c execution/red.c -o build/execution/red.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/builtins
+cc -g -Wall -Wextra -Werror -c builtins/cd.c -o build/builtins/cd.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/builtins
+cc -g -Wall -Wextra -Werror -c builtins/pwd_env_echo.c -o build/builtins/pwd_env_echo.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/builtins
+ 
+cc -g -Wall -Wextra -Werror -c builtins/isbuiltins.c -o build/builtins/isbuiltins.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/builtins
+cc -g -Wall -Wextra -Werror -c builtins/export1.c -o build/builtins/export1.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/builtins
+cc -g -Wall -Wextra -Werror -c builtins/export2.c -o build/builtins/export2.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/builtins
+cc -g -Wall -Wextra -Werror -c builtins/export3.c -o build/builtins/export3.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/builtins
+cc -g -Wall -Wextra -Werror -c builtins/ft_run.c -o build/builtins/ft_run.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/builtins
+cc -g -Wall -Wextra -Werror -c builtins/unset.c -o build/builtins/unset.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/builtins
+cc -g -Wall -Wextra -Werror -c builtins/temp.c -o build/builtins/temp.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/execution
+cc -g -Wall -Wextra -Werror -c execution/execve.c -o build/execution/execve.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/execution
+cc -g -Wall -Wextra -Werror -c execution/pipe.c -o build/execution/pipe.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/printf_
+cc -g -Wall -Wextra -Werror -c printf_/ft_printf.c -o build/printf_/ft_printf.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/printf_
+cc -g -Wall -Wextra -Werror -c printf_/ft_putchar.c -o build/printf_/ft_putchar.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/printf_
+cc -g -Wall -Wextra -Werror -c printf_/ft_putstr.c -o build/printf_/ft_putstr.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/printf_
+cc -g -Wall -Wextra -Werror -c printf_/ft_putnbr.c -o build/printf_/ft_putnbr.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/printf_
+cc -g -Wall -Wextra -Werror -c printf_/ft_argp.c -o build/printf_/ft_argp.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/printf_
+cc -g -Wall -Wextra -Werror -c printf_/ft_hexa.c -o build/printf_/ft_hexa.o -I /Users/ozahid-/.brew/opt/readline/include 
+mkdir -p build/printf_
+cc -g -Wall -Wextra -Werror -c printf_/ft_unsignednumber.c -o build/printf_/ft_unsignednumber.o -I /Users/ozahid-/.brew/opt/readline/include 
+cc -g build/minishell.o build/Parsing/delete_quotes.o build/Parsing/create_lst_temp.o build/Parsing/remplire_env.o build/Parsing/expand.o build/Parsing/join_temp.o build/Parsing/delete_spaces.o build/Parsing/check_redirections.o build/Parsing/check_redirections_utils.o build/Parsing/delete_node.o build/Parsing/remplire_list.o build/Parsing/redirections_split.o build/Parsing/redirections_split_utils.o build/Parsing/redirections.o build/Parsing/herdoc.o build/Parsing/signals_handler.o build/Parsing/free_listes.o build/Parsing/minishell_utils.o build/execution/red.o build/builtins/cd.o build/builtins/pwd_env_echo.o build/builtins/isbuiltins.o build/builtins/export1.o build/builtins/export2.o build/builtins/export3.o build/builtins/ft_run.o build/builtins/unset.o build/builtins/temp.o build/execution/execve.o build/execution/pipe.o build/printf_/ft_printf.o build/printf_/ft_putchar.o build/printf_/ft_putstr.o build/printf_/ft_putnbr.o build/printf_/ft_argp.o build/printf_/ft_hexa.o build/printf_/ft_unsignednumber.o -lreadline -L /Users/ozahid-/.brew/opt/readline/lib -o \
+	minishell Libft/libft.a 
+echo "Minishell Maked"
+make: Leaving directory `/Users/ozahid-/Desktop/Minishell'
+ 

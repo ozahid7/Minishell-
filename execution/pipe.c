@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 03:09:55 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/19 19:16:24 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/19 20:56:48 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ static int	is_built(t_list *lst)
 {
 	if ((!ft_strcmp(lst->cmd[0], "export") && lst->cmd[1])
 		|| !ft_strcmp(lst->cmd[0], "cd")
-		|| !ft_strcmp(lst->cmd[0], "unset"))
+		|| !ft_strcmp(lst->cmd[0], "unset")
+		|| !ft_strcmp(lst->cmd[0], "exit"))
 		return (1);
 	return (0);
 }
@@ -51,7 +52,6 @@ void	ft_pipe(int *fd, t_list *lst, t_env **head_env)
 		}
 		if (*lst->cmd && is_built(lst))
 		{
-			printf("from heere\n");
 			ft_run(lst, head_env);
 		}
 		else
