@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pwd_env_echo.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:04:41 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/19 16:46:44 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/19 18:57:13 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,5 @@ void	f_exit(t_list *cmd)
 		else
 			exit_with(ft_atoi(cmd->cmd[1]));
 	}
-	exit_with(2);
+	exit(0);
 }

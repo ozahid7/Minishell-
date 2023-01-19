@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 10:28:33 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/18 15:59:12 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/19 20:15:37 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int	ft_check_quotes(char *str)
 				i++;
 			if (str[i] == '\0')
 			{
-				write(2, "Erreur\n", 7);
+				fprint(2, "Minishell: syntax error near unexpected token %c\n", q);
+				g_exit_status = 258;
 				return (-1);
 			}
 		}

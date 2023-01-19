@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipe.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 03:09:55 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/19 13:53:35 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/19 19:16:24 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,10 @@ void	ft_pipe(int *fd, t_list *lst, t_env **head_env)
 			p.save = fd[0];
 		}
 		if (*lst->cmd && is_built(lst))
+		{
+			printf("from heere\n");
 			ft_run(lst, head_env);
+		}
 		else
 			ft_fork(p, env, lst, fd);
 		close(fd[1]);

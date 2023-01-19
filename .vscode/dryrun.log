@@ -1,0 +1,10 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/ozahid-/Desktop/Minishell'
+mkdir -p build
+cc -g -Wall -Wextra -Werror -c minishell.c -o build/minishell.o -I /Users/ozahid-/.brew/opt/readline/include 
+ 
+cc -g build/minishell.o build/Parsing/delete_quotes.o build/Parsing/create_lst_temp.o build/Parsing/remplire_env.o build/Parsing/expand.o build/Parsing/join_temp.o build/Parsing/delete_spaces.o build/Parsing/check_redirections.o build/Parsing/check_redirections_utils.o build/Parsing/delete_node.o build/Parsing/remplire_list.o build/Parsing/redirections_split.o build/Parsing/redirections_split_utils.o build/Parsing/redirections.o build/Parsing/herdoc.o build/Parsing/signals_handler.o build/Parsing/free_listes.o build/Parsing/minishell_utils.o build/execution/red.o build/builtins/cd.o build/builtins/pwd_env_echo.o build/builtins/isbuiltins.o build/builtins/export1.o build/builtins/export2.o build/builtins/export3.o build/builtins/ft_run.o build/builtins/unset.o build/builtins/temp.o build/execution/execve.o build/execution/pipe.o build/printf_/ft_printf.o build/printf_/ft_putchar.o build/printf_/ft_putstr.o build/printf_/ft_putnbr.o build/printf_/ft_argp.o build/printf_/ft_hexa.o build/printf_/ft_unsignednumber.o -lreadline -L /Users/ozahid-/.brew/opt/readline/lib -o \
+	minishell Libft/libft.a 
+echo "Minishell Maked"
+make: Leaving directory `/Users/ozahid-/Desktop/Minishell'
+ 

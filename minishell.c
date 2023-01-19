@@ -3,25 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:33:06 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/19 17:09:47 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/19 20:06:49 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"minishell.h"
 
-void	exit_status(void)
-{
-	int	flag;
-	while (waitpid(-1, &flag, 0) != -1)
-		;
-	// printf("")
-	// if (WEXITSTATUS(flag) == g_exit_status)
-		exit(g_exit_status);
+// void	exit_status(void)
+// {
+	
 		
-}
+// }
 
 int	main(int ac, char **av, char **env)
 {
@@ -29,6 +24,7 @@ int	main(int ac, char **av, char **env)
 	t_list	*lst;
 	t_env	*lst_env;
 	char	*str;
+	int	flag = -1;
 
 	lst_env = after_while(ac, av, env);
 	while (1)
@@ -43,7 +39,19 @@ int	main(int ac, char **av, char **env)
 		{
 			lst = remplire_list(lst, &lst_temp);
 			ft_exec(lst, &lst_env);
-			exit_status();	
+			
+		while (waitpid(-1, &flag, 0) != -1)
+			;
+		if (flag != -1)
+		{
+			g_exit_status = flag / 256;
+		}
+		printf("%d\n", g_exit_status);
+		if (WEXITSTATUS(flag) != g_exit_status)
+		{
+			g_exit_status = WEXITSTATUS(flag);
+			exit(g_exit_status);
+		}	
 		}	
 		ft_free(lst_temp, lst);
 	}

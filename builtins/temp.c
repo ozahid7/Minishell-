@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 15:39:31 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/18 15:46:58 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/19 18:56:21 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ char	**get_arg(t_env *env)
 
 void	exit_with(int nb)
 {
-	exit(nb);
 	g_exit_status = nb;
+	exit(nb);
 }

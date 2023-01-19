@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execve.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/19 16:54:23 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/19 20:05:23 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ char	*path(t_env *data, char *cmd)
 			break ;
 		i++;
 	}
-	if (path[i] && access(path[i], X_OK || F_OK) != 0)
-		fprint(2, "Minishell: %s: command not found\n", cmd);
 	if (path[i] == NULL)
 		return (cmd);
 	return (path[i]);
@@ -73,18 +71,20 @@ int	ft_fork(t_pip p, t_env *env, t_list *cmd, int *fd)
 	{
 		ft_dup(fd, p.cout, p.pin);
 		if (pat && is_builtins(cmd))
+		{
 			ft_run(cmd, &env);
+		}
 		else
 		{
 			if (cmd->red && ft_execred(cmd) == 1)
 				exit_with(1);
 			if (execve(pat, cmd->cmd, arg) == -1)
 			{
-				perror(*cmd->cmd);
-				exit_with (127);
+				fprint(2, "Minishell: %s: command not found\n", cmd->cmd[0]);
+				exit (127);
 			}
 		}
-		//exit_with(0);
+		exit (0);
 	}
 	ft_freetab(arg);
 	return (0);
@@ -95,5 +95,6 @@ int	ft_exec(t_list *lst, t_env **env)
 	int	fd[2];
 
 	ft_pipe(fd, lst, env);
+
 	return (0);
 }

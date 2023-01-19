@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+         #
+#    By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 13:31:37 by ajafy             #+#    #+#              #
-#    Updated: 2023/01/01 19:04:28 by ajafy            ###   ########.fr        #
+#    Updated: 2023/01/19 19:50:46 by ozahid-          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCB = ft_lstnew.c  ft_lstsize.c ft_lstadd_back.c ft_lstlast.c ft_lstadd_front.c
 
 OBJB = $(SRCB:.c=.o)
 
-CC = gcc
+CC = cc
 
 NAME = libft.a
 
