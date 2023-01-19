@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 23:36:12 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/05 02:37:37 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/17 20:13:58 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	ft_compteur(char const *s, char c)
 	while (s[i] != '\0')
 	{
 		j = i;
-		while (s[j] != c && s[j] != '\0')
+		while (s[j] && s[j] != c && s[j] != '\0')
 		{
 			j = ft_utils_split(s, j);
 			i = j;

@@ -6,11 +6,34 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 19:42:11 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/17 01:06:18 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/17 17:35:45 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
+
+int	is_valid(char *name, char *content)
+{
+	int		i;
+	char	*str;
+
+	str = NULL;
+	i = 1;
+	if (content)
+		str = ft_strchr(content, '+');
+	if (name[0] != '_' && !ft_isalpha(name[0]))
+		return (1);
+	if (str != NULL && str[0] == '+' && str[1] != '='
+		&& !ft_isalpha(str[1]) && !ft_isdigit(str[1]))
+		return (1);
+	while (name[i])
+	{
+		if (!ft_isalnum(name[i]))
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 void	ft_join(t_env *update, char *content, char *name)
 {

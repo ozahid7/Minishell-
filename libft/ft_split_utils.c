@@ -3,23 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 15:15:20 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/01 19:13:47 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/17 20:23:49 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
+#include <stdio.h>
 
 int	ft_utils_split(char const *s, int j)
 {
 	char	q;
 
-	if (s[j] == '\"' || s[j] == '\'')
+	if ((s[j] == '\"' || s[j] == '\''))
 	{
 		q = s[j++];
-		while (s[j] != q)
+		while (s[j] && s[j] != q)
 			j++;
 	}
 	return (j);

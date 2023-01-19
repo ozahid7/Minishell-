@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 00:20:46 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/16 23:24:54 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/18 18:00:19 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int	ft_run(t_list *lst, t_env **env)
 		ft_echo(lst->cmd);
 	else if (ft_strcmp(lst->cmd[0], "pwd") == 0)
 		ft_pwd(lst);
-	else if (!ft_strcmp(lst->cmd[0], "unset") && lst->cmd[1])
+	else if (!ft_strcmp(lst->cmd[0], "unset")
+		&& lst->cmd[1] && check_name(*env, lst->cmd[1]))
 		ft_unset(env, lst);
 	else if (ft_strcmp(lst->cmd[0], "export") == 0)
 	{

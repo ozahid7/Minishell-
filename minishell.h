@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:32:59 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/17 01:35:49 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/19 13:06:57 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define OUTFILE 7
 # define HERDOC 44
 # define APPAND 77
+# define _ "/usr/bin/env"
 # define PATH "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki"
 
 int	g_exit_status;
@@ -43,7 +44,7 @@ typedef struct s_pip
 /*
 	Redirections_list
 */
-
+void	exit_with(int nb);
 t_red	*ft_lstnew_red(void *content, int type, int fd);
 t_red	*ft_lstlast_red(t_red *lst);
 void	ft_lstadd_back_red(t_red **alst, t_red *new);
@@ -93,6 +94,7 @@ typedef struct s_env
 	struct s_env	*next;
 }	t_env;
 
+void	prin(t_env *env);
 t_list	*ft_remplire_list(char **tab);
 t_env	*lstnew_env(char **content);
 t_env	*ft_remplire_env(char **content);
@@ -162,7 +164,6 @@ int		ft_out(t_red *red);
 int		ft_in(t_red	*red);
 int		ft_appand(t_red	*red);
 int		ft_execred(t_list *lst);
-void	exit_with(int nb);
 //....................../execution/.....................
 char	*get_path(t_env *data);
 char	*path(t_env *data, char *lst);

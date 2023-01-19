@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 16:33:35 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/17 01:30:54 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/18 20:53:00 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_in(t_red	*red)
 
 	fd = open(red->file_name, O_RDONLY, 0666);
 	if (fd == -1)
-		return (perror(red->file_name), 1);
+		return (perror(""), 1);
 	if (access(red->file_name, R_OK) == -1)
 		return (perror(""), 1);
 	dup2(fd, 0);
@@ -74,11 +74,11 @@ int	ft_execred(t_list *lst)
 
 t_env	*empty_env(t_env *lnv, t_env *new)
 {
+	new = ft_envnew(getcwd(NULL, 0), ft_strdup("PWD"));
+	lst_addback_env(&lnv, new);
 	new = ft_envnew(ft_strdup(PATH), ft_strdup("PATH"));
 	lst_addback_env(&lnv, new);
-	new = ft_envnew(NULL, ft_strdup("OLDPWD"));
-	lst_addback_env(&lnv, new);
-	new = ft_envnew(getcwd(NULL, 0), ft_strdup("PWD"));
+	new = ft_envnew(_, ft_strdup("_"));
 	lst_addback_env(&lnv, new);
 	return (lnv);
 }
