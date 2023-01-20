@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 19:42:11 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/17 17:35:45 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/20 10:19:04 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,31 +53,6 @@ void	ft_join(t_env *update, char *content, char *name)
 	}
 }
 
-void	ft_update(t_env *tmp, char *content, char *name)
-{
-	char	*str;
-
-	str = NULL;
-	if (content)
-		str = ft_strchr(content, '=');
-	if (str && tmp)
-	{
-		if (str[0] == '=' && str[1] == '\0')
-		{
-			tmp->i = 1;
-			free(tmp->value);
-			tmp->value = NULL;
-		}
-		else if (str[0] == '=' && str[1] != '\0')
-		{
-			tmp->i = 1;
-			free(tmp->value);
-			tmp->value = ft_strdup(++str);
-		}
-	}
-	free(name);
-}
-
 char	*get_content(char *content, int *n)
 {
 	char	*tmp;
@@ -114,7 +89,7 @@ int	ft_addnode(t_env *env, char *cnt)
 	name = dup_name(cnt);
 	if (is_valid(name, cnt))
 		return (free(name), fprint(2, "minishell: export: %s"
-		": not valid identifier\n", cnt), 1);
+				": not valid identifier\n", cnt), 1);
 	update = return_node(env, name);
 	if (update)
 		return (ft_update_node(cnt, name, update), 0);

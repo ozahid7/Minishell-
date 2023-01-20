@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipe.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 03:09:55 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/19 20:56:48 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/20 10:26:57 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,10 @@ static int	is_built(t_list *lst)
 void	ft_pipe(int *fd, t_list *lst, t_env **head_env)
 {
 	t_pip	p;
-	t_env	*env;
 
 	p.pin = -1;
 	p.save = -1;
 	fd[1] = -1;
-	env = *head_env;
 	while (lst)
 	{
 		p.cout = -1;
@@ -51,11 +49,9 @@ void	ft_pipe(int *fd, t_list *lst, t_env **head_env)
 			p.save = fd[0];
 		}
 		if (*lst->cmd && is_built(lst))
-		{
 			ft_run(lst, head_env);
-		}
 		else
-			ft_fork(p, env, lst, fd);
+			ft_fork(p, *head_env, lst, fd);
 		close(fd[1]);
 		close(p.pin);
 		lst = lst->next;

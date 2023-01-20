@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 10:28:33 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/19 20:37:40 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/20 10:09:19 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int	ft_check_quotes(char *str)
 				i++;
 			if (str[i] == '\0')
 			{
-				fprint(2, "Minishell: syntax error near unexpected token %c\n", q);
+				fprint(2, "Minishell: syntax error near unexpected token %c\n"\
+					, q);
 				g_exit_status = 258;
 				return (-1);
 			}
@@ -56,7 +57,8 @@ int	ft_remplire_listes(char *s, t_temp **lst_t, t_env **lst_e)
 	ft_expand(lst_e, lst_t);
 	ft_join_lst(lst_t);
 	if (check_operator_(*lst_t, 0, 0) == -1)
-		return (fprint(2, "Minishell: syntax error near unexpected token |\n"), g_exit_status = 258, -1);
+		return (fprint(2, "Minishell: syntax error near unexpected token |\n"), \
+			g_exit_status = 258, -1);
 	ft_take_redirections(&lst, 0);
 	return (1);
 }

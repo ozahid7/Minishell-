@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pwd_env_echo.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:04:41 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/19 20:43:30 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/20 10:20:42 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,8 @@ void	f_exit(t_list *cmd)
 	{
 		if (check_for_exit(cmd->cmd[1]))
 		{
-			fprint(2, "Minishell: %s: %s: numeric argument required\n",\
-			 cmd->cmd[0], cmd->cmd[1]);
+			fprint(2, "Minishell: %s: %s: numeric argument required\n", \
+			cmd->cmd[0], cmd->cmd[1]);
 			g_exit_status = 255;
 		}
 		else

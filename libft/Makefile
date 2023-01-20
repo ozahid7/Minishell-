@@ -3,22 +3,23 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+         #
+#    By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/04 13:31:37 by ajafy             #+#    #+#              #
-#    Updated: 2023/01/19 19:50:46 by ozahid-          ###   ########.fr        #
+#    Created: 2023/01/20 11:21:12 by ajafy             #+#    #+#              #
+#    Updated: 2023/01/20 11:29:25 by ajafy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 SRC = ft_isalpha.c ft_memchr.c ft_strchr.c ft_strlen.c ft_tolower.c ft_atoi.c ft_isascii.c ft_memcmp.c ft_strdup.c ft_strncmp.c ft_toupper.c ft_bzero.c ft_isdigit.c ft_memcpy.c \
       ft_strlcat.c ft_strnstr.c ft_isalnum.c ft_isprint.c ft_memset.c ft_strlcpy.c ft_strrchr.c ft_memmove.c ft_calloc.c ft_substr.c ft_strjoin.c ft_putchar_fd.c ft_putstr_fd.c \
       ft_putnbr_fd.c ft_strtrim.c ft_putendl_fd.c ft_striteri.c ft_strmapi.c ft_split.c ft_split_utils.c ft_itoa.c
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(addprefix build/, ${SRC:.c=.o})
 
 SRCB = ft_lstnew.c  ft_lstsize.c ft_lstadd_back.c ft_lstlast.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c
 
-OBJB = $(SRCB:.c=.o)
+OBJB = $(addprefix build/, ${SRCB:.c=.o})
 
 CC = cc
 
@@ -28,16 +29,17 @@ CFLAGS = -Wall -Wextra -Werror
 
 HEADER = libft.h
 
-all : $(NAME)
+build/%.o : %.c
+	@mkdir -p $(@D)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-%.o : %.c
-	@$(CC) $(CFLAGS) -c $< 
+all : $(NAME)
 
 $(NAME) : $(OBJ) $(HEADER)
 	@ar -rc $(NAME) $(OBJ)
 
 clean :
-	@rm -f $(OBJ) $(OBJB)
+	@rm -rf build
 
 fclean : clean
 	@rm -f $(NAME)

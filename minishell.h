@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:32:59 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/19 16:11:47 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/20 10:19:54 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,6 +199,7 @@ char	*dup_name(char *src);
 char	*check_plus(char *content);
 t_env	*return_node(t_env *env, char *name);
 int		is_valid(char *name, char *content);
+void	ft_update(t_env *tmp, char *content, char *name);
 //builtins unset
 void	ft_envdelone(t_env *env, void (*del)(void*));
 t_env	*ft_envnew(char *content, char *name);

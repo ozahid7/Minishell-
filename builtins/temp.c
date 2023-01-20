@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   temp.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 15:39:31 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/19 18:56:21 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/20 10:19:35 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,29 @@ void	exit_with(int nb)
 {
 	g_exit_status = nb;
 	exit(nb);
+}
+
+void	ft_update(t_env *tmp, char *content, char *name)
+{
+	char	*str;
+
+	str = NULL;
+	if (content)
+		str = ft_strchr(content, '=');
+	if (str && tmp)
+	{
+		if (str[0] == '=' && str[1] == '\0')
+		{
+			tmp->i = 1;
+			free(tmp->value);
+			tmp->value = NULL;
+		}
+		else if (str[0] == '=' && str[1] != '\0')
+		{
+			tmp->i = 1;
+			free(tmp->value);
+			tmp->value = ft_strdup(++str);
+		}
+	}
+	free(name);
 }

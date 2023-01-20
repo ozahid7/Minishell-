@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   unset.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:16:01 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/19 13:12:45 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/20 10:21:05 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-void prin(t_env *env)
+void	prin(t_env *env)
 {
-	t_env *tmp;
+	t_env	*tmp;
 
 	tmp = env;
 	while (tmp)
@@ -33,7 +33,6 @@ t_env	*del_node(t_env **env, char *name)
 	{
 		target = *env;
 		*env = (*env)->next;
-		//env = &(target->next);
 	}
 	else
 	{
@@ -46,7 +45,6 @@ t_env	*del_node(t_env **env, char *name)
 		tmp->next = target->next;
 	}
 	ft_envdelone(target, free);
-	//prin(*env);
 	return (*env);
 }
 

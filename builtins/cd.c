@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cd.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 23:54:26 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/19 19:07:13 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/20 10:17:15 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,11 @@ void	ft_cd(t_env *env, t_list *lst)
 	cd_cond(lst, &i, env);
 	if (lst->cmd[1] != NULL && chdir(lst->cmd[1]) == -1
 		&& lst->cmd[1][0] != '-' && lst->cmd[1][0] != '~')
-		{
-			fprint(2, "minishell: cd: %s: No such file or directory\n",
-				lst->cmd[1]);
-			g_exit_status = 1;
-		}
+	{
+		fprint(2, "minishell: cd: %s: No such file or directory\n",
+			lst->cmd[1]);
+		g_exit_status = 1;
+	}
 	pwd = getcwd(NULL, 0);
 	if (!pwd)
 		return ;
