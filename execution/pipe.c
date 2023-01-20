@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 03:09:55 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/20 18:20:05 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/20 19:39:06 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	is_built(t_list *lst)
 	if ((!ft_strcmp(lst->cmd[0], "export") && lst->cmd[1])
 		|| !ft_strcmp(lst->cmd[0], "cd")
 		|| !ft_strcmp(lst->cmd[0], "unset")
-		|| !ft_strcmp(lst->cmd[0], "exit"))
+		|| !ft_strcmp(lst->cmd[0], "exit") || !ft_strcmp(lst->cmd[0], "echo"))
 		return (1);
 	return (0);
 }

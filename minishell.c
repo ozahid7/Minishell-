@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:33:06 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/20 19:07:48 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/20 21:29:19 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,34 @@ void	exit_status(void)
 
 	flag = 0;
 	pid = waitpid(-1, &flag, 0);
+	printf("cpid = %d \n", pid);
 	while (pid != -1)
 		pid = waitpid(-1, &flag, 0);
+	
 	signal(SIGINT, handler_sig);
 	signal(SIGQUIT, SIG_IGN);
-	if (flag != -1 && g_exit_status == 0)
+
+	if (WIFSIGNALED(flag))
 	{
-		printf("after1 %d %d\n", g_exit_status, flag);
-		g_exit_status = flag / 256;
-		printf("beforr1 %d %d\n", g_exit_status, flag);
+		if (flag == 2)
+			g_exit_status = 130;
+		else if (flag == 3)
+			g_exit_status = 131;
+		// else
+		// 	g_exit_status = 0;
 	}
-	if (WEXITSTATUS(flag) != g_exit_status && g_exit_status != 1)
+	else if (g_exit_status == 0 )
 	{
-		printf("after2 %d %d\n", g_exit_status, flag);
+		g_exit_status = flag / 256;
+	}
+	else if (WEXITSTATUS(flag) != g_exit_status && g_exit_status != 1)
+	{
 		g_exit_status = WEXITSTATUS(flag);
-		printf("befor2 %d %d\n", g_exit_status, flag);
 		exit(g_exit_status);
 	}
+	
+	
+	
 }
 
 int	main(int ac, char **av, char **env)

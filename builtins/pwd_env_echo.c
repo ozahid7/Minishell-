@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pwd_env_echo.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:04:41 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/20 10:20:42 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/20 19:39:23 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ void	ft_echo(char **content)
 			fprint(1, "%s", content[i++]);
 		}
 		ft_putstr_fd("\n", 1);
-	}	
+	}
+	g_exit_status = 0;
 }
 
 void	ft_pwd(t_list *lst)
