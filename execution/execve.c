@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/20 10:46:28 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/20 15:12:33 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int	ft_fork(t_pip p, t_env *env, t_list *cmd, int *fd)
 		return (perror("fork"), 1);
 	else if (p.id == 0)
 	{
+		handler_sig_();
 		ft_dup(fd, p.cout, p.pin);
 		if (pat && is_builtins(cmd))
 			ft_run(cmd, &env);
@@ -84,6 +85,7 @@ int	ft_exec(t_list *lst, t_env **env)
 {
 	int	fd[2];
 
+	signal(SIGINT, SIG_IGN);
 	ft_pipe(fd, lst, env);
 	return (0);
 }

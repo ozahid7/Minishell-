@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 07:06:47 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/15 14:41:51 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/20 15:13:02 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,15 @@ void	handler_sig(int sig)
 	if (sig == 2)
 	{
 		write(1, "\n", 1);
-		rl_replace_line("", 0);
 		rl_on_new_line();
+		rl_replace_line("", 0);
 		g_exit_status = 1;
 		rl_redisplay();
 	}
+}
+
+void	handler_sig_(void)
+{
+	signal(SIGINT, SIG_DFL);
+	signal(SIGQUIT, SIG_DFL);
 }

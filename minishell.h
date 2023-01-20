@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:32:59 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/20 10:19:54 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/20 15:15:33 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@
 # define OUTFILE 7
 # define HERDOC 44
 # define APPAND 77
-# define _ "/usr/bin/env"
 # define PATH "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki"
 
 int	g_exit_status;
@@ -139,7 +138,7 @@ Parsing
 int		ft_remplire_listes(char *s, t_temp **lst_t, t_env **lst_e);
 int		ft_check_quotes(char *str);
 void	ft_exit(void);
-t_env	*after_while(int ac, char **av, char **env);
+t_env	*before_while(int ac, char **av, char **env);
 void	ft_free(t_temp *lst_temp, t_list *lst);
 /*
 Signals
@@ -147,6 +146,8 @@ Signals
 
 void	handler_sig_herdoc(int sig);
 void	handler_sig(int sig);
+void	handler_sig_(void);
+void	ctl_quit(int sig);
 
 /*
 free

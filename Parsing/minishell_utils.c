@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 10:28:33 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/20 10:09:19 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/20 14:03:41 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	ft_remplire_listes(char *s, t_temp **lst_t, t_env **lst_e)
 	return (1);
 }
 
-t_env	*after_while(int ac, char **av, char **env)
+t_env	*before_while(int ac, char **av, char **env)
 {
 	t_env	*lst_env;
 
