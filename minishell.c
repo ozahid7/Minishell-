@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:33:06 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/20 21:29:19 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/20 22:22:05 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,37 +16,33 @@ void	exit_status(void)
 {
 	int	flag;
 	int	pid;
+	int	save;
 
 	flag = 0;
 	pid = waitpid(-1, &flag, 0);
-	printf("cpid = %d \n", pid);
+	save = flag;
 	while (pid != -1)
 		pid = waitpid(-1, &flag, 0);
-	
 	signal(SIGINT, handler_sig);
 	signal(SIGQUIT, SIG_IGN);
-
 	if (WIFSIGNALED(flag))
 	{
 		if (flag == 2)
 			g_exit_status = 130;
 		else if (flag == 3)
 			g_exit_status = 131;
-		// else
-		// 	g_exit_status = 0;
+		else
+			g_exit_status = 0;
 	}
-	else if (g_exit_status == 0 )
-	{
+	else if (g_exit_status == 0)
 		g_exit_status = flag / 256;
-	}
-	else if (WEXITSTATUS(flag) != g_exit_status && g_exit_status != 1)
+	else if (WEXITSTATUS(flag) != g_exit_status && g_exit_status == 0)
 	{
 		g_exit_status = WEXITSTATUS(flag);
 		exit(g_exit_status);
 	}
-	
-	
-	
+	if (flag == 13)
+		g_exit_status = save / 256;
 }
 
 int	main(int ac, char **av, char **env)

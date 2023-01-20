@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/20 19:50:50 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/20 22:21:22 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char	*get_path(t_env *data)
 char	*path(t_env *data, char *cmd)
 {
 	char	**path;
+	char	*ret;
 	int		i;
 
 	i = 0;
@@ -48,8 +49,10 @@ char	*path(t_env *data, char *cmd)
 		i++;
 	}
 	if (path[i] == NULL)
-		return (cmd);
-	return (path[i]);
+		return (ft_freetab(path), cmd);
+	ret = ft_strdup(path[i]);
+	ft_freetab(path);
+	return (ret);
 }
 
 int	ft_fork(t_pip p, t_env *env, t_list *cmd, int *fd)
@@ -84,6 +87,7 @@ int	ft_fork(t_pip p, t_env *env, t_list *cmd, int *fd)
 int	ft_exec(t_list *lst, t_env **env)
 {
 	int	fd[2];
+
 	signal(SIGINT, SIG_IGN);
 	ft_pipe(fd, lst, env);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 16:33:35 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/20 15:29:48 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/20 22:21:37 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ int	ft_in(t_red	*red)
 
 int	ft_apnd_hrdc(t_red	*red)
 {
-	int	fd;
-	t_red *tmp;
+	int		fd;
+	t_red	*tmp;
 
 	tmp = ft_lstlast_red(red);
 	if (red->type_red == 77)
