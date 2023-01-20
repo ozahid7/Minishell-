@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execve.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/20 15:12:33 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/20 18:19:54 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ int	ft_fork(t_pip p, t_env *env, t_list *cmd, int *fd)
 int	ft_exec(t_list *lst, t_env **env)
 {
 	int	fd[2];
-
 	signal(SIGINT, SIG_IGN);
 	ft_pipe(fd, lst, env);
 	return (0);

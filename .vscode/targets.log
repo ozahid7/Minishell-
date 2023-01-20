@@ -8,14 +8,18 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Fri Jan 20 14:14:34 2023
+# Make data base, printed on Fri Jan 20 15:35:49 2023
 
 # Variables
 
+# environment
+VSCODE_GIT_ASKPASS_MAIN = /Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
 # makefile (from `Makefile', line 24)
 OBJ = $(addprefix build/, $(SRC:.c=.o))
 # makefile (from `Makefile', line 14)
@@ -27,7 +31,8 @@ SRC = minishell.c Parsing/delete_quotes.c Parsing/create_lst_temp.c Parsing/remp
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/ajafy/Desktop/Minishell
+CURDIR := /Users/ozahid-/Desktop/Minishell
+ 
 # makefile
 SHELL = /bin/sh
 # environment
@@ -39,13 +44,17 @@ CFLAGS = -Wall -Wextra -Werror
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
-VSCODE_CWD = /
+VSCODE_INJECTION = 1
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.cSe8lF6Deg/Render
+VSCODE_CWD = /Users/ozahid-/Desktop/Minishell
 # environment
-PATH = /Users/ajafy/.brew/bin:/Users/ajafy/goinfre/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.Bet2sOLwgO/Render
+# environment
+PATH = /Users/ozahid-/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/ozahid-/.brew/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+ZDOTDIR = /Users/ozahid-
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
@@ -53,51 +62,57 @@ ELECTRON_RUN_AS_NODE = 1
 # makefile (from `Makefile', line 34)
 LIBFT_DIR = Libft/
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.POZPqa6FU8/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.5ErYW1BSfH/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-HOMEBREW_TEMP = /tmp/ajafy/Homebrew/Temp
+HOMEBREW_TEMP = /tmp/ozahid-/Homebrew/Temp
 # environment
-PWD = /Users/ajafy/Desktop/Minishell
+PWD = /Users/ozahid-/Desktop/Minishell
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-HOME = /Users/ajafy
+HOME = /Users/ozahid-
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/ajafy/Library/Application Support/Code/CachedData/97dec172d3256f8ca4bfb2143f3f76b503ca0534
+VSCODE_CLI = 1
 # environment
-LOGNAME = ajafy
+VSCODE_CODE_CACHE_PATH = /Users/ozahid-/Library/Application Support/Code/CachedData/97dec172d3256f8ca4bfb2143f3f76b503ca0534
+# environment
+LOGNAME = ozahid-
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
-ZSH = /Users/ajafy/.oh-my-zsh
+ZSH = /Users/ozahid-/.oh-my-zsh
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
+MAKELEVEL := 0
+# environment
 XPC_FLAGS = 0x0
+# environment
+COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-HOMEBREW_CACHE = /tmp/ajafy/Homebrew/Caches
+HOMEBREW_CACHE = /tmp/ozahid-/Homebrew/Caches
 # environment
-SHLVL = 1
+SHLVL = 3
 # makefile (from `Makefile', line 32)
 LIBFT = Libft/libft.a 
 # makefile (from `Makefile', line 26)
-CC = cc -g
+CC = cc
 # default
 MAKE_VERSION := 3.81
 # environment
-USER = ajafy
+USER = ozahid-
 # makefile
 .DEFAULT_GOAL := all
 # makefile (from `Makefile', line 28)
@@ -110,14 +125,20 @@ LESS = -R
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
 # makefile (from `Makefile', line 36)
 INC = -I /Users/$(USER)/.brew/opt/readline/include
+# environment
+VSCODE_GIT_ASKPASS_EXTRA_ARGS = --ms-enable-electron-run-as-node
+# environment
+TERM_PROGRAM = vscode
 # default
 .VARIABLES := 
 # environment
-TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n000ccjc00334b/T/
+TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n000cf5c0033jb/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/ajafy/Library/Application Support/Code/1.74.3-main.sock
+VSCODE_IPC_HOOK = /Users/ozahid-/Library/Application Support/Code/1.74.3-main.sock
+# environment
+VSCODE_GIT_ASKPASS_NODE = /Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)
 # environment
 MallocNanoZone = 0
 # makefile
@@ -127,27 +148,29 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000001.Electron
+TERM_PROGRAM_VERSION = 1.74.3
+# environment
+XPC_SERVICE_NAME = 0
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
-__CF_USER_TEXT_ENCODING = 0x18C8B:0x0:0x0
+__CF_USER_TEXT_ENCODING = 0x18E2B:0:0
 # environment
-COMMAND_MODE = unix2003
+GIT_ASKPASS = /Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh
 # default
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
+# environment
+USER_ZDOTDIR = /Users/ozahid-
 # environment
 PAGER = less
 # environment
 LC_ALL = C
 # makefile (from `Makefile', line 38)
 HEADER = minishell.h
-# environment
-SECURITYSESSIONID = 186a8
 # automatic
 ^F = $(notdir $^)
 # default
@@ -155,13 +178,15 @@ SUFFIXES :=
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
-MAKELEVEL := 0
+VSCODE_GIT_IPC_HANDLE = /var/folders/zz/zyxvpxvq6csfxvn_n000cf5c0033jb/T/vscode-git-bff4c862bd.sock
 # environment
 LANG = C
 # environment
-VSCODE_PID = 1658
+TERM = xterm-256color
+# environment
+VSCODE_PID = 12280
 # variable set hash-table stats:
-# Load=74/1024=7%, Rehash=0, Collisions=3/105=3%
+# Load=86/1024=8%, Rehash=0, Collisions=5/117=4%
 
 # Pattern-specific Variable Values
 
@@ -169,13 +194,13 @@ VSCODE_PID = 1658
 
 # Directories
 
-# Parsing (device 16777227, inode 1171423): 20 files, no impossibilities so far.
-# . (device 16777227, inode 1171353): 16 files, no impossibilities.
-# execution (device 16777227, inode 1171452): 5 files, no impossibilities so far.
-# builtins (device 16777227, inode 1171442): 11 files, no impossibilities so far.
-# printf_ (device 16777227, inode 1171505): 10 files, no impossibilities so far.
+# Parsing (device 16777227, inode 3971194): 20 files, no impossibilities so far.
+# . (device 16777227, inode 3971076): 15 files, no impossibilities.
+# execution (device 16777227, inode 3971223): 5 files, no impossibilities so far.
+# builtins (device 16777227, inode 3971213): 11 files, no impossibilities so far.
+# printf_ (device 16777227, inode 3971276): 10 files, no impossibilities so far.
 
-# 62 files, no impossibilities in 5 directories.
+# 61 files, no impossibilities in 5 directories.
 
 # Implicit Rules
 
@@ -192,7 +217,7 @@ build/%.o: %.c
 build/printf_/ft_putchar.o: printf_/ft_putchar.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `printf_/ft_putchar'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -205,7 +230,7 @@ build/printf_/ft_putchar.o: printf_/ft_putchar.c
 # Not a target:
 builtins/ft_run.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -213,8 +238,9 @@ builtins/ft_run.c:
 
 # Not a target:
 builtins/temp.c:
+ 
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:19:35
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -223,7 +249,7 @@ builtins/temp.c:
 build/Parsing/minishell_utils.o: Parsing/minishell_utils.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `Parsing/minishell_utils'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -236,7 +262,7 @@ build/Parsing/minishell_utils.o: Parsing/minishell_utils.c
 # Not a target:
 printf_/ft_putchar.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -245,7 +271,7 @@ printf_/ft_putchar.c:
 # Not a target:
 builtins/unset.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:21:05
+#  Last modified 2023-01-20 15:20:26
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -254,7 +280,7 @@ builtins/unset.c:
 build/Parsing/redirections_split.o: Parsing/redirections_split.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `Parsing/redirections_split'
-#  Last modified 2023-01-20 14:12:56
+#  Last modified 2023-01-20 15:35:29
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -267,7 +293,7 @@ build/Parsing/redirections_split.o: Parsing/redirections_split.c
 # Not a target:
 builtins/export2.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:19:04
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -276,12 +302,11 @@ builtins/export2.c:
 build/Parsing/signals_handler.o: Parsing/signals_handler.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `Parsing/signals_handler'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
- 
 #  commands to execute (from `Makefile', line 41):
 	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) -c $< -o $@ $(INC) 
@@ -290,7 +315,7 @@ build/Parsing/signals_handler.o: Parsing/signals_handler.c
 # Not a target:
 Parsing/minishell_utils.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 14:03:41
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -308,7 +333,7 @@ all: Libft/libft.a minishell
 build/builtins/ft_run.o: builtins/ft_run.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `builtins/ft_run'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -321,7 +346,7 @@ build/builtins/ft_run.o: builtins/ft_run.c
 build/builtins/temp.o: builtins/temp.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `builtins/temp'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -334,7 +359,7 @@ build/builtins/temp.o: builtins/temp.c
 # Not a target:
 Parsing/redirections_split.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:09:50
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -343,7 +368,7 @@ Parsing/redirections_split.c:
 build/Parsing/herdoc.o: Parsing/herdoc.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `Parsing/herdoc'
-#  Last modified 2023-01-20 14:12:56
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -356,7 +381,7 @@ build/Parsing/herdoc.o: Parsing/herdoc.c
 build/printf_/ft_unsignednumber.o: printf_/ft_unsignednumber.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `printf_/ft_unsignednumber'
-#  Last modified 2023-01-20 14:12:58
+#  Last modified 2023-01-20 15:35:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -369,7 +394,7 @@ build/printf_/ft_unsignednumber.o: printf_/ft_unsignednumber.c
 build/builtins/unset.o: builtins/unset.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `builtins/unset'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -382,7 +407,7 @@ build/builtins/unset.o: builtins/unset.c
 build/builtins/export2.o: builtins/export2.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `builtins/export2'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -395,7 +420,7 @@ build/builtins/export2.o: builtins/export2.c
 build/Parsing/free_listes.o: Parsing/free_listes.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `Parsing/free_listes'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -408,7 +433,7 @@ build/Parsing/free_listes.o: Parsing/free_listes.c
 # Not a target:
 Parsing/herdoc.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:08:23
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -417,7 +442,7 @@ Parsing/herdoc.c:
 # Not a target:
 printf_/ft_unsignednumber.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -426,7 +451,7 @@ printf_/ft_unsignednumber.c:
 build/execution/pipe.o: execution/pipe.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `execution/pipe'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -439,7 +464,7 @@ build/execution/pipe.o: execution/pipe.c
 # Not a target:
 Parsing/free_listes.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -448,7 +473,7 @@ Parsing/free_listes.c:
 build/Parsing/delete_spaces.o: Parsing/delete_spaces.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `Parsing/delete_spaces'
-#  Last modified 2023-01-20 14:12:56
+#  Last modified 2023-01-20 15:35:29
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -461,7 +486,7 @@ build/Parsing/delete_spaces.o: Parsing/delete_spaces.c
 build/printf_/ft_argp.o: printf_/ft_argp.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `printf_/ft_argp'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -480,16 +505,17 @@ build/printf_/ft_argp.o: printf_/ft_argp.c
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 13:11:51
+#  Last modified 2023-01-20 15:35:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+ 
 
 # Not a target:
 Parsing/delete_spaces.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:07:40
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -498,7 +524,7 @@ Parsing/delete_spaces.c:
 # Not a target:
 execution/execve.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 14:10:34
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -507,7 +533,7 @@ execution/execve.c:
 # Not a target:
 printf_/ft_argp.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -516,7 +542,7 @@ printf_/ft_argp.c:
 build/Parsing/delete_node.o: Parsing/delete_node.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `Parsing/delete_node'
-#  Last modified 2023-01-20 14:12:56
+#  Last modified 2023-01-20 15:35:29
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -529,7 +555,7 @@ build/Parsing/delete_node.o: Parsing/delete_node.c
 build/Parsing/delete_quotes.o: Parsing/delete_quotes.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `Parsing/delete_quotes'
-#  Last modified 2023-01-20 14:12:56
+#  Last modified 2023-01-20 15:35:29
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -539,10 +565,9 @@ build/Parsing/delete_quotes.o: Parsing/delete_quotes.c
 	@$(CC) $(CFLAGS) -c $< -o $@ $(INC) 
 	
 
- 
 minishell: build/minishell.o build/Parsing/delete_quotes.o build/Parsing/create_lst_temp.o build/Parsing/remplire_env.o build/Parsing/expand.o build/Parsing/join_temp.o build/Parsing/delete_spaces.o build/Parsing/check_redirections.o build/Parsing/check_redirections_utils.o build/Parsing/delete_node.o build/Parsing/remplire_list.o build/Parsing/redirections_split.o build/Parsing/redirections_split_utils.o build/Parsing/redirections.o build/Parsing/herdoc.o build/Parsing/signals_handler.o build/Parsing/free_listes.o build/Parsing/minishell_utils.o build/execution/red.o build/builtins/cd.o build/builtins/pwd_env_echo.o build/builtins/isbuiltins.o build/builtins/export1.o build/builtins/export2.o build/builtins/export3.o build/builtins/ft_run.o build/builtins/unset.o build/builtins/temp.o build/execution/execve.o build/execution/pipe.o build/printf_/ft_printf.o build/printf_/ft_putchar.o build/printf_/ft_putstr.o build/printf_/ft_putnbr.o build/printf_/ft_argp.o build/printf_/ft_hexa.o build/printf_/ft_unsignednumber.o minishell.h
 #  Implicit rule search has not been done.
-#  Last modified 2023-01-20 14:12:58
+#  Last modified 2023-01-20 15:35:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -556,7 +581,7 @@ minishell: build/minishell.o build/Parsing/delete_quotes.o build/Parsing/create_
 # Not a target:
 Parsing/delete_node.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -565,7 +590,7 @@ Parsing/delete_node.c:
 # Not a target:
 Parsing/delete_quotes.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -573,7 +598,7 @@ Parsing/delete_quotes.c:
 
 Libft/libft.a:
 #  Implicit rule search has not been done.
-#  Last modified 2023-01-20 14:12:56
+#  Last modified 2023-01-20 15:35:29
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 52):
@@ -585,7 +610,7 @@ Libft/libft.a:
 # Not a target:
 builtins/isbuiltins.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -603,7 +628,7 @@ fclean: clean
 # Not a target:
 builtins/cd.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:17:15
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -612,7 +637,7 @@ builtins/cd.c:
 # Not a target:
 Parsing/signals_handler.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 14:06:36
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -621,7 +646,7 @@ Parsing/signals_handler.c:
 # Not a target:
 execution/red.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:29:48
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -630,7 +655,7 @@ execution/red.c:
 build/Parsing/remplire_list.o: Parsing/remplire_list.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `Parsing/remplire_list'
-#  Last modified 2023-01-20 14:12:56
+#  Last modified 2023-01-20 15:35:29
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -643,7 +668,7 @@ build/Parsing/remplire_list.o: Parsing/remplire_list.c
 build/builtins/isbuiltins.o: builtins/isbuiltins.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `builtins/isbuiltins'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -656,7 +681,7 @@ build/builtins/isbuiltins.o: builtins/isbuiltins.c
 build/Parsing/check_redirections_utils.o: Parsing/check_redirections_utils.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `Parsing/check_redirections_utils'
-#  Last modified 2023-01-20 14:12:56
+#  Last modified 2023-01-20 15:35:29
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -669,7 +694,7 @@ build/Parsing/check_redirections_utils.o: Parsing/check_redirections_utils.c
 build/builtins/cd.o: builtins/cd.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `builtins/cd'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -682,7 +707,7 @@ build/builtins/cd.o: builtins/cd.c
 build/Parsing/redirections.o: Parsing/redirections.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `Parsing/redirections'
-#  Last modified 2023-01-20 14:12:56
+#  Last modified 2023-01-20 15:35:29
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -695,7 +720,7 @@ build/Parsing/redirections.o: Parsing/redirections.c
 # Not a target:
 Parsing/remplire_list.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:16:26
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -704,7 +729,7 @@ Parsing/remplire_list.c:
 build/printf_/ft_putnbr.o: printf_/ft_putnbr.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `printf_/ft_putnbr'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -717,7 +742,7 @@ build/printf_/ft_putnbr.o: printf_/ft_putnbr.c
 build/Parsing/create_lst_temp.o: Parsing/create_lst_temp.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `Parsing/create_lst_temp'
-#  Last modified 2023-01-20 14:12:56
+#  Last modified 2023-01-20 15:35:29
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -729,6 +754,7 @@ build/Parsing/create_lst_temp.o: Parsing/create_lst_temp.c
 
 # Not a target:
 .DEFAULT:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -736,7 +762,7 @@ build/Parsing/create_lst_temp.o: Parsing/create_lst_temp.c
 build/builtins/export3.o: builtins/export3.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `builtins/export3'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -749,7 +775,7 @@ build/builtins/export3.o: builtins/export3.c
 # Not a target:
 builtins/export3.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -758,7 +784,7 @@ builtins/export3.c:
 # Not a target:
 Parsing/redirections.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:15:42
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -767,7 +793,7 @@ Parsing/redirections.c:
 # Not a target:
 printf_/ft_putnbr.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -776,7 +802,7 @@ printf_/ft_putnbr.c:
 # Not a target:
 Parsing/create_lst_temp.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -784,14 +810,13 @@ Parsing/create_lst_temp.c:
 
 re: fclean all
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
 build/execution/execve.o: execution/execve.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `execution/execve'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -804,7 +829,7 @@ build/execution/execve.o: execution/execve.c
 build/minishell.o: minishell.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `minishell'
-#  Last modified 2023-01-20 14:12:56
+#  Last modified 2023-01-20 15:35:29
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -827,7 +852,7 @@ clean:
 build/Parsing/redirections_split_utils.o: Parsing/redirections_split_utils.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `Parsing/redirections_split_utils'
-#  Last modified 2023-01-20 14:12:56
+#  Last modified 2023-01-20 15:35:29
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -840,7 +865,7 @@ build/Parsing/redirections_split_utils.o: Parsing/redirections_split_utils.c
 build/Parsing/remplire_env.o: Parsing/remplire_env.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `Parsing/remplire_env'
-#  Last modified 2023-01-20 14:12:56
+#  Last modified 2023-01-20 15:35:29
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -853,7 +878,7 @@ build/Parsing/remplire_env.o: Parsing/remplire_env.c
 # Not a target:
 Parsing/redirections_split_utils.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:09:35
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -862,7 +887,7 @@ Parsing/redirections_split_utils.c:
 # Not a target:
 minishell.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 14:12:50
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -871,7 +896,7 @@ minishell.c:
 # Not a target:
 Parsing/check_redirections_utils.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -880,7 +905,7 @@ Parsing/check_redirections_utils.c:
 build/Parsing/join_temp.o: Parsing/join_temp.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `Parsing/join_temp'
-#  Last modified 2023-01-20 14:12:56
+#  Last modified 2023-01-20 15:35:29
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -893,7 +918,7 @@ build/Parsing/join_temp.o: Parsing/join_temp.c
 # Not a target:
 Parsing/remplire_env.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:16:11
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -902,7 +927,7 @@ Parsing/remplire_env.c:
 # Not a target:
 execution/pipe.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:26:57
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -911,7 +936,7 @@ execution/pipe.c:
 # Not a target:
 builtins/pwd_env_echo.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:20:42
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -920,7 +945,7 @@ builtins/pwd_env_echo.c:
 build/printf_/ft_hexa.o: printf_/ft_hexa.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `printf_/ft_hexa'
-#  Last modified 2023-01-20 14:12:58
+#  Last modified 2023-01-20 15:35:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -933,7 +958,7 @@ build/printf_/ft_hexa.o: printf_/ft_hexa.c
 build/printf_/ft_printf.o: printf_/ft_printf.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `printf_/ft_printf'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -946,7 +971,7 @@ build/printf_/ft_printf.o: printf_/ft_printf.c
 # Not a target:
 builtins/export1.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -955,7 +980,7 @@ builtins/export1.c:
 # Not a target:
 Parsing/join_temp.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -964,7 +989,7 @@ Parsing/join_temp.c:
 build/Parsing/expand.o: Parsing/expand.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `Parsing/expand'
-#  Last modified 2023-01-20 14:12:56
+#  Last modified 2023-01-20 15:35:29
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -977,7 +1002,7 @@ build/Parsing/expand.o: Parsing/expand.c
 build/execution/red.o: execution/red.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `execution/red'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -990,7 +1015,7 @@ build/execution/red.o: execution/red.c
 # Not a target:
 printf_/ft_hexa.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -999,7 +1024,7 @@ printf_/ft_hexa.c:
 # Not a target:
 printf_/ft_printf.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1008,16 +1033,17 @@ printf_/ft_printf.c:
 # Not a target:
 Parsing/expand.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:08:03
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
+ 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 build/builtins/pwd_env_echo.o: builtins/pwd_env_echo.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `builtins/pwd_env_echo'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1030,7 +1056,7 @@ build/builtins/pwd_env_echo.o: builtins/pwd_env_echo.c
 build/Parsing/check_redirections.o: Parsing/check_redirections.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `Parsing/check_redirections'
-#  Last modified 2023-01-20 14:12:56
+#  Last modified 2023-01-20 15:35:29
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1043,7 +1069,7 @@ build/Parsing/check_redirections.o: Parsing/check_redirections.c
 build/printf_/ft_putstr.o: printf_/ft_putstr.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `printf_/ft_putstr'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1056,17 +1082,16 @@ build/printf_/ft_putstr.o: printf_/ft_putstr.c
 # Not a target:
 minishell.h:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 14:04:30
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
- 
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 build/builtins/export1.o: builtins/export1.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `builtins/export1'
-#  Last modified 2023-01-20 14:12:57
+#  Last modified 2023-01-20 15:35:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1079,7 +1104,7 @@ build/builtins/export1.o: builtins/export1.c
 # Not a target:
 Parsing/check_redirections.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1088,7 +1113,7 @@ Parsing/check_redirections.c:
 # Not a target:
 printf_/ft_putstr.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-01-20 10:06:05
+#  Last modified 2023-01-20 15:18:49
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1107,6 +1132,6 @@ printf_/ft_putstr.c:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Jan 20 14:14:34 2023
+# Finished Make data base on Fri Jan 20 15:35:49 2023
 
  

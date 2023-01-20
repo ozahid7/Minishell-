@@ -3,26 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   unset.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:16:01 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/20 10:21:05 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/20 15:20:26 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
-
-void	prin(t_env *env)
-{
-	t_env	*tmp;
-
-	tmp = env;
-	while (tmp)
-	{
-		printf("%s = %s\n", tmp->key, tmp->value);
-		tmp = tmp->next;
-	}
-}
 
 t_env	*del_node(t_env **env, char *name)
 {

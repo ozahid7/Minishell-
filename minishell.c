@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:33:06 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/20 15:06:37 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/20 19:07:48 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,19 @@ void	exit_status(void)
 		pid = waitpid(-1, &flag, 0);
 	signal(SIGINT, handler_sig);
 	signal(SIGQUIT, SIG_IGN);
-	if (flag != -1)
-		g_exit_status = flag / 256;
-	if (WEXITSTATUS(flag) != g_exit_status)
+	if (flag != -1 && g_exit_status == 0)
 	{
+		printf("after1 %d %d\n", g_exit_status, flag);
+		g_exit_status = flag / 256;
+		printf("beforr1 %d %d\n", g_exit_status, flag);
+	}
+	if (WEXITSTATUS(flag) != g_exit_status && g_exit_status != 1)
+	{
+		printf("after2 %d %d\n", g_exit_status, flag);
 		g_exit_status = WEXITSTATUS(flag);
+		printf("befor2 %d %d\n", g_exit_status, flag);
 		exit(g_exit_status);
-	}	
+	}
 }
 
 int	main(int ac, char **av, char **env)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 10:28:33 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/20 14:03:41 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/20 18:11:35 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,10 @@ int	ft_remplire_listes(char *s, t_temp **lst_t, t_env **lst_e)
 	t_temp	*lst;
 
 	if (ft_check_quotes(s) == -1)
+	{
+		printf("ppid = %d \n", getpid());
 		return (free(s), g_exit_status = 258, -1);
+	}
 	*lst_t = ft_remplire_without_quotes(s);
 	lst = *lst_t;
 	if (redirections(lst, lst_e) == -1)

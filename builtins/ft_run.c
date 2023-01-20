@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 00:20:46 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/19 20:56:54 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/20 16:22:27 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ int	ft_run(t_list *lst, t_env **env)
 		if (lst->cmd[1] == NULL)
 			ft_exp(*env);
 		while (lst->cmd[i])
-			ft_addnode(*env, lst->cmd[i++]);
+		{
+			if (ft_addnode(*env, lst->cmd[i++]))
+				g_exit_status = 1;
+		}
 	}
 	else if (ft_strcmp(lst->cmd[0], "exit") == 0)
 		f_exit(lst);

@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 16:33:35 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/18 20:53:00 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/20 15:29:48 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ int	ft_in(t_red	*red)
 int	ft_apnd_hrdc(t_red	*red)
 {
 	int	fd;
+	t_red *tmp;
 
+	tmp = ft_lstlast_red(red);
 	if (red->type_red == 77)
 	{
 		fd = open(red->file_name, O_CREAT | O_RDWR | O_APPEND);
@@ -52,8 +54,8 @@ int	ft_apnd_hrdc(t_red	*red)
 	}
 	else if (red->type_red == 44)
 	{
-		dup2(red->fd, 0);
-		close(red->fd);
+		dup2(tmp->fd, 0);
+		close(tmp->fd);
 	}
 	return (0);
 }
@@ -77,8 +79,6 @@ t_env	*empty_env(t_env *lnv, t_env *new)
 	new = ft_envnew(getcwd(NULL, 0), ft_strdup("PWD"));
 	lst_addback_env(&lnv, new);
 	new = ft_envnew(ft_strdup(PATH), ft_strdup("PATH"));
-	lst_addback_env(&lnv, new);
-	new = ft_envnew(_, ft_strdup("_"));
 	lst_addback_env(&lnv, new);
 	return (lnv);
 }
