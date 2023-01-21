@@ -3,14 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:33:06 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/20 22:22:05 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/21 10:30:12 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"minishell.h"
+
+void	sig_flag(int flag)
+{
+	if (flag == 2)
+	g_exit_status = 130;
+	else if (flag == 3)
+		g_exit_status = 131;
+	else
+		g_exit_status = 0;
+}
 
 void	exit_status(void)
 {
@@ -26,14 +36,7 @@ void	exit_status(void)
 	signal(SIGINT, handler_sig);
 	signal(SIGQUIT, SIG_IGN);
 	if (WIFSIGNALED(flag))
-	{
-		if (flag == 2)
-			g_exit_status = 130;
-		else if (flag == 3)
-			g_exit_status = 131;
-		else
-			g_exit_status = 0;
-	}
+		sig_flag(flag);
 	else if (g_exit_status == 0)
 		g_exit_status = flag / 256;
 	else if (WEXITSTATUS(flag) != g_exit_status && g_exit_status == 0)

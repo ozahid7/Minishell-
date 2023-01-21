@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:32:59 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/20 15:36:01 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/21 18:07:15 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,7 +179,7 @@ void	ft_cd(t_env *env, t_list *lst);
 char	*get_oldp(t_env *env);
 void	ft_echo(char **content);
 void	ft_pwd(t_list *lst);
-char	*ft_change_pwd(char *cmd, char *pwd, t_env *env);
+char	*ft_change_pwd(char *str, char *pwd, t_env *env);
 void	ftenv(t_env *env);
 char	*ft_getpwd(t_env *env);
 int		is_builtins(t_list *lst);

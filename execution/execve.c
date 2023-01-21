@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execve.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/20 22:21:22 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/21 16:52:13 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,15 @@ int	ft_fork(t_pip p, t_env *env, t_list *cmd, int *fd)
 		else
 		{
 			if (cmd->red && ft_execred(cmd) == 1)
-				exit_with(1);
+				exit(1);
 			if (execve(pat, cmd->cmd, arg) == -1)
 				return (fprint(2, "Minishell: %s: command not found\n", \
 				cmd->cmd[0]), exit(127), 0);
 		}
 		exit (0);
 	}
+	if (!access(pat, X_OK))
+		free(pat);
 	return (ft_freetab(arg), 0);
 }
 

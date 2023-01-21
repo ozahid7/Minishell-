@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pwd_env_echo.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:04:41 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/20 19:39:23 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/21 10:41:59 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,36 +22,6 @@ void	ftenv(t_env *env)
 			fprint(1, "%s=\n", env->key);
 		env = env->next;
 	}
-}
-
-void	ft_echo(char **content)
-{
-	int	i;
-
-	i = 1;
-	if (!content[i])
-		return (ft_putstr_fd("\n", 1));
-	if (!ft_strcmp(content[i], "-n"))
-	{
-		i = 2;
-		while (content[i])
-		{
-			if (i != 2)
-				fprint(1, " ");
-			fprint(1, "%s", content[i++]);
-		}
-	}
-	else
-	{
-		while (content[i])
-		{	
-			if (i != 1)
-				fprint(1, " ");
-			fprint(1, "%s", content[i++]);
-		}
-		ft_putstr_fd("\n", 1);
-	}
-	g_exit_status = 0;
 }
 
 void	ft_pwd(t_list *lst)

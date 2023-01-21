@@ -3,37 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   cd.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 23:54:26 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/20 18:15:44 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/21 18:24:57 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-void	cd_cond(t_list *lst, int *i, t_env *env)
+void	cd_home(t_env *env)
 {
-	char	*str;
+	t_env	*home;
+
+	home = return_node(env, "HOME");
+	if (check_name(env, "HOME"))
+		chdir(home->value);
+	else
+		fprint(2, "minishell: cd: HOME not set\n");
+}
+
+void	cd_cond2(t_list *lst, int *i, t_env *env)
+{
+	t_env	*old;
 
 	if ((lst->cmd != NULL
 			&& ft_strcmp(lst->cmd[0], "cd") == 0 && lst->cmd[1] == '\0')
 		|| (ft_strcmp(lst->cmd[0], "cd") == 0
 			&& ft_strcmp(lst->cmd[1], "~") == 0))
-	{
-		if (check_name(env, "HOME"))
-			chdir("/Users/ozahid-");
-		else
-			fprint(2, "minishell: cd: HOME not set\n");
-	}
+		cd_home(env);
 	else if ((lst->cmd != NULL && ft_strcmp(lst->cmd[0], "cd") == 0 \
 			&& ft_strcmp(lst->cmd[1], "-") == 0))
 	{
-		str = get_oldp(env);
-		if (str != NULL)
+		old = return_node(env, "OLDPWD");
+		if (old->value != NULL)
 		{
-			fprint(1, "%s\n", str);
-			chdir(str);
+			fprint(1, "%s\n", old->value);
+			chdir(old->value);
 		}
 		else
 			fprint(2, "minishell: cd: OLDPWD not set\n");
@@ -46,19 +52,18 @@ void	ft_cd(t_env *env, t_list *lst)
 	int		i;
 	char	*pwd;
 	char	*old_pwd;
-	char	*str;
 
 	i = 0;
 	pwd = NULL;
-	str = NULL;
 	old_pwd = getcwd(NULL, 0);
-	cd_cond(lst, &i, env);
+	cd_cond2(lst, &i, env);
 	if (lst->cmd[1] != NULL && chdir(lst->cmd[1]) == -1
 		&& lst->cmd[1][0] != '-' && lst->cmd[1][0] != '~')
 	{
 		fprint(2, "minishell: cd: %s: No such file or directory\n",
 			lst->cmd[1]);
 		g_exit_status = 1;
+		return ;
 	}
 	pwd = getcwd(NULL, 0);
 	if (!pwd)
@@ -66,35 +71,24 @@ void	ft_cd(t_env *env, t_list *lst)
 	ft_change_pwd("PWD", pwd, env);
 	if (i != 1)
 		ft_change_pwd("OLDPWD", old_pwd, env);
+	free(pwd);
+	free(old_pwd);
 	return ;
 }
 
-char	*ft_change_pwd(char *lst, char *pwd, t_env *env)
+char	*ft_change_pwd(char *str, char *pwd, t_env *env)
 {
 	t_env	*tmp;
 
 	tmp = env;
 	while (env)
 	{
-		if (ft_strcmp(env->key, lst) == 0)
-			env->value = pwd;
+		if (ft_strcmp(env->key, str) == 0)
+		{
+			env->value = ft_strdup(pwd);
+		}
 		env = env->next;
 	}
 	env = tmp;
 	return (0);
-}
-
-char	*get_oldp(t_env *env)
-{
-	t_env	*tmp;
-
-	tmp = env;
-	while (env)
-	{
-		if (ft_strcmp(env->key, "OLDPWD") == 0)
-			return (env->value);
-		env = env->next;
-	}
-	env = tmp;
-	return (NULL);
 }
