@@ -6,7 +6,7 @@
 #    By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/01 18:38:23 by ajafy             #+#    #+#              #
-#    Updated: 2023/01/21 10:43:01 by ajafy            ###   ########.fr        #
+#    Updated: 2023/01/21 22:32:28 by ajafy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRC = 	minishell.c Parsing/delete_quotes.c Parsing/create_lst_temp.c Parsing/rem
 		
 OBJ = $(addprefix build/, $(SRC:.c=.o))
 
-CC = cc
+CC = cc -g
 
 NAME = minishell
 

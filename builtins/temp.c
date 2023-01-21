@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 15:39:31 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/20 10:19:35 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/22 00:05:46 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,15 @@ char	**get_arg(t_env *env)
 
 	i = 0;
 	len = env_len(env);
-	str = malloc(sizeof(char *) * len + 1);
+	str = malloc(sizeof(char *) * len);
 	if (!str)
 		return (NULL);
 	while (env)
 	{
 		str[i] = ft_strdup(env->key);
 		str[i] = ft_strjoin(str[i], "=");
-		str[i] = ft_strjoin(str[i], env->value);
+		if (env->value)
+			str[i] = ft_strjoin(str[i], env->value);
 		i++;
 		env = env->next;
 	}

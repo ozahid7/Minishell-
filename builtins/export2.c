@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 19:42:11 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/20 16:22:55 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/21 22:56:40 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ char	*get_content(char *content, int *n)
 {
 	char	*tmp;
 
+	tmp = NULL;
 	if (check_char(content, '='))
 	{
 		*n = 0;

@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 23:54:26 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/21 18:24:57 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/21 19:00:22 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,17 +63,15 @@ void	ft_cd(t_env *env, t_list *lst)
 		fprint(2, "minishell: cd: %s: No such file or directory\n",
 			lst->cmd[1]);
 		g_exit_status = 1;
+		free (old_pwd);
 		return ;
 	}
 	pwd = getcwd(NULL, 0);
-	if (!pwd)
-		return ;
 	ft_change_pwd("PWD", pwd, env);
 	if (i != 1)
 		ft_change_pwd("OLDPWD", old_pwd, env);
 	free(pwd);
 	free(old_pwd);
-	return ;
 }
 
 char	*ft_change_pwd(char *str, char *pwd, t_env *env)
@@ -85,6 +83,7 @@ char	*ft_change_pwd(char *str, char *pwd, t_env *env)
 	{
 		if (ft_strcmp(env->key, str) == 0)
 		{
+			free(env->value);
 			env->value = ft_strdup(pwd);
 		}
 		env = env->next;

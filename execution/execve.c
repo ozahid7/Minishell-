@@ -6,26 +6,11 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/21 16:52:13 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/22 00:26:39 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
-
-char	*get_path(t_env *data)
-{
-	int		i;
-	char	*str;
-
-	i = 0;
-	while (data)
-	{
-		if (ft_strcmp(data->key, "PATH") == 0)
-			str = data->value;
-		data = data->next;
-	}
-	return (str);
-}
 
 char	*path(t_env *data, char *cmd)
 {
@@ -55,35 +40,40 @@ char	*path(t_env *data, char *cmd)
 	return (ret);
 }
 
+int	exec_cmd(t_list *cmd, char *path, char **arg)
+{
+	if (cmd->red && ft_execred(cmd) == 1)
+		exit(1);
+	if (execve(path, cmd->cmd, arg) == -1)
+		return (fprint(2, "Minishell: %s: command not found\n", \
+		cmd->cmd[0]), exit(127), 0);
+	return (1);
+}
+
 int	ft_fork(t_pip p, t_env *env, t_list *cmd, int *fd)
 {
 	char	**arg;
 	char	*pat;
 
+	arg = NULL;
 	pat = path(env, *cmd->cmd);
-	arg = get_arg(env);
 	p.id = fork();
 	if (p.id == -1)
 		return (perror("fork"), 1);
 	else if (p.id == 0)
 	{
+		arg = get_arg(env);
 		handler_sig_();
 		ft_dup(fd, p.cout, p.pin);
 		if (pat && is_builtins(cmd))
 			ft_run(cmd, &env);
 		else
-		{
-			if (cmd->red && ft_execred(cmd) == 1)
-				exit(1);
-			if (execve(pat, cmd->cmd, arg) == -1)
-				return (fprint(2, "Minishell: %s: command not found\n", \
-				cmd->cmd[0]), exit(127), 0);
-		}
-		exit (0);
+			if (exec_cmd(cmd, pat, arg) == 0)
+				return (0);
 	}
-	if (!access(pat, X_OK))
+	if (ft_strcmp(pat, cmd->cmd[0]) && !access(pat, X_OK))
 		free(pat);
-	return (ft_freetab(arg), 0);
+	return (0);
 }
 
 int	ft_exec(t_list *lst, t_env **env)

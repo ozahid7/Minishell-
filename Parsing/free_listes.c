@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 02:21:18 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/15 14:41:09 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/21 22:56:04 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,22 @@ void	free_lst(t_list *lst)
 		}
 		if (tmp->cmd)
 			free(tmp->cmd);
+		free(tmp);
+		tmp = NULL;
+	}
+}
+
+void	free_lst_env(t_env *head_env)
+{
+	t_env	*tmp;
+
+	tmp = NULL;
+	while (head_env)
+	{
+		tmp = head_env;
+		head_env = head_env->next;
+		free(tmp->key);
+		free(tmp->value);
 		free(tmp);
 		tmp = NULL;
 	}

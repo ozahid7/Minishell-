@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:32:59 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/21 18:07:15 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/21 22:56:20 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,6 +155,7 @@ free
 
 void	free_lst_temp(t_temp *head_temp);
 void	free_lst(t_list *lst);
+void	free_lst_env(t_env *head_env);
 
 /*
 exec
