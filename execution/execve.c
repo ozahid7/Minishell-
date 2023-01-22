@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/22 00:57:24 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/22 02:06:19 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	exec_cmd(t_list *cmd, char *path, char **arg)
 {
 	if (cmd->red && ft_execred(cmd) == 1)
 		exit(1);
+	if (cmd->red && !ft_strcmp(cmd->cmd[0], ""))
+		return (1);
 	if (execve(path, cmd->cmd, arg) == -1)
 		return (fprint(2, "Minishell: %s: command not found\n", \
 		cmd->cmd[0]), exit(127), 0);
@@ -64,7 +66,8 @@ int	ft_fork(t_pip p, t_env *env, t_list *cmd, int *fd)
 	{
 		arg = get_arg(env);
 		handler_sig_();
-		ft_dup(fd, p.cout, p.pin);
+		if (cmd->next)
+			ft_dup(fd, p.cout, p.pin);
 		if (pat && is_builtins(cmd))
 			ft_run(cmd, &env);
 		else

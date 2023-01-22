@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:33:06 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/21 10:30:12 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/22 01:55:41 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ int	main(int ac, char **av, char **env)
 			lst = remplire_list(lst, &lst_temp);
 			ft_exec(lst, &lst_env);
 			exit_status();
-			ft_free(lst_temp, lst);
+			free_lst(lst);
 		}
+		free_lst_temp(lst_temp);
 	}
 }

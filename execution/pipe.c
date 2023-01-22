@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 03:09:55 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/21 22:51:13 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/22 02:19:42 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	is_built(t_list *lst)
 		|| !ft_strcmp(lst->cmd[0], "cd")
 		|| !ft_strcmp(lst->cmd[0], "unset")
 		|| !ft_strcmp(lst->cmd[0], "exit")
-		|| !ft_strcmp(lst->cmd[0], "echo")
+		|| (!ft_strcmp(lst->cmd[0], "echo") && !lst->red)
 		|| !ft_strcmp(lst->cmd[0], "env"))
 		return (1);
 	return (0);

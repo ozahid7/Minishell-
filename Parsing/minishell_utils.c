@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 10:28:33 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/20 21:51:41 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/22 01:57:21 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	ft_remplire_listes(char *s, t_temp **lst_t, t_env **lst_e)
 	ft_expand(lst_e, lst_t);
 	ft_join_lst(lst_t);
 	if (check_operator_(*lst_t, 0, 0) == -1)
-		return (fprint(2, "Minishell: syntax error near unexpected token |\n"), \
+		return (fprint(2, "Minishell: syntax error near unexpected token\n"), \
 			g_exit_status = 258, -1);
 	ft_take_redirections(&lst, 0);
 	return (1);
@@ -73,10 +73,4 @@ t_env	*before_while(int ac, char **av, char **env)
 	signal(SIGQUIT, SIG_IGN);
 	lst_env = ft_remplire_env(env);
 	return (lst_env);
-}
-
-void	ft_free(t_temp *lst_temp, t_list *lst)
-{
-	free_lst_temp(lst_temp);
-	free_lst(lst);
 }

@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 11:31:27 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/20 10:08:23 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/22 01:39:55 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	check_operator_(t_temp *lst, int p, int i)
 		if (is_pipe_redirection(lst->content, lst->i))
 		{
 			if (i == 0)
-				if (ft_strcmp(lst->content, "|") == 0 && p > 1)
+				if (ft_strcmp(lst->content, "|") == 0)
 					return (-1);
 			if (i == len - 1)
 				return (-1);
