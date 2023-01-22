@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 10:41:46 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/22 21:42:32 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/22 21:43:14 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,14 @@ char	**skip_n(char **content)
 			if (j != 0)
 				content = ft_shift(content, i);
 			else
+			{
+				free(content[i]);
 				content[i++] = ft_strdup("-n");
+			}
 			j++;
 		}
 		else
-			i++;
+			return (content);
 	}
 	return (content);
 }
