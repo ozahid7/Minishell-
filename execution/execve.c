@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/22 00:26:39 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/22 00:57:24 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int	ft_fork(t_pip p, t_env *env, t_list *cmd, int *fd)
 		else
 			if (exec_cmd(cmd, pat, arg) == 0)
 				return (0);
+		exit (0);
 	}
 	if (ft_strcmp(pat, cmd->cmd[0]) && !access(pat, X_OK))
 		free(pat);
