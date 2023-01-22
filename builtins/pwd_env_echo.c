@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:04:41 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/22 20:37:18 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/22 22:28:54 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ int	check_for_exit(char *str, int *j)
 void	f_exit(t_list *cmd)
 {
 	int	i;
-	
+
 	fprint(2, "exit\n");
-	if (cmd->cmd[2])
+	if (cmd->cmd[1] && cmd->cmd[2])
 	{
 		fprint(2, "Minishell: exit: too many arguments\n");
 		g_exit_status = 1;
@@ -88,6 +88,7 @@ void	f_exit(t_list *cmd)
 			else
 				exit(ft_atoi(cmd->cmd[1]));
 		}
-		exit(g_exit_status);
+		else
+			exit(g_exit_status);
 	}
 }
