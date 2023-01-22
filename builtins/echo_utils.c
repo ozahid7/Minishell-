@@ -3,17 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   echo_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 10:41:46 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/21 11:07:42 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/22 02:55:25 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-void	ft_echo_utils(char **content, int i, int j)
+void	ft_echo_utils(char **content,  int j)
 {
+	int	i;
+
+	i = 1;
 	while (content[i])
 	{
 		if (i != j)
@@ -26,14 +29,12 @@ void	ft_echo_utils(char **content, int i, int j)
 
 void	ft_echo(char **content)
 {
-	int	i;
-
-	i = 1;
-	if (!content[i])
+	
+	if (!content[1])
 		return (ft_putstr_fd("\n", 1));
-	if (!ft_strcmp(content[i], "-n"))
-		ft_echo_utils(content, 2, 2);
+	if (!ft_strncmp(content[1], "-n", 3))
+		ft_echo_utils(content, 2);
 	else
-		ft_echo_utils(content, 1, 1);
+		ft_echo_utils(content, 1);
 	g_exit_status = 0;
 }
