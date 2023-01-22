@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_run.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 00:20:46 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/21 22:51:31 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/22 19:37:43 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_run(t_list *lst, t_env **env)
 	else if (ft_strcmp(lst->cmd[0], "pwd") == 0)
 		ft_pwd(lst);
 	else if (!ft_strcmp(lst->cmd[0], "unset")
-		&& lst->cmd[1] && check_name(*env, lst->cmd[1]))
+		&& lst->cmd[1])
 		ft_unset(env, lst);
 	else if (ft_strcmp(lst->cmd[0], "export") == 0)
 		ft_run_utils(lst, env);

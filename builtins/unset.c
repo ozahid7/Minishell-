@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:16:01 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/20 15:20:26 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/22 19:44:51 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ void	ft_unset(t_env **env, t_list *lst)
 	char	*name;
 
 	name = dup_name(lst->cmd[1]);
-	if (env_len(*env) - 1 == 1)
+	if (is_valid(name, lst->cmd[1])) 
+		fprint(2, "minishell: unset: %s"
+			": not valid identifier\n", lst->cmd[1]);
+	else if (env_len(*env) - 1 == 1)
 	{
 		if (!ft_strcmp((*env)->key, name))
 		{

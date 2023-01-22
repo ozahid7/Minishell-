@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execve.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/22 02:06:19 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/22 19:36:08 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,7 @@ int	ft_fork(t_pip p, t_env *env, t_list *cmd, int *fd)
 	{
 		arg = get_arg(env);
 		handler_sig_();
-		if (cmd->next)
-			ft_dup(fd, p.cout, p.pin);
+		ft_dup(fd, p.cout, p.pin);
 		if (pat && is_builtins(cmd))
 			ft_run(cmd, &env);
 		else

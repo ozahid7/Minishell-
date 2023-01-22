@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 19:42:11 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/21 22:56:40 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/22 20:05:12 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ int	is_valid(char *name, char *content)
 	i = 1;
 	if (content)
 		str = ft_strchr(content, '+');
-	if (name[0] != '_' && !ft_isalpha(name[0]))
+	if (str && str[0] == '+' && str[1] != '=')
 		return (1);
 	if (str != NULL && str[0] == '+' && str[1] != '='
 		&& !ft_isalpha(str[1]) && !ft_isdigit(str[1]))
 		return (1);
 	while (name[i])
 	{
-		if (!ft_isalnum(name[i]))
+		if (!ft_isalnum(name[i]) && name[i] != '_')
 			return (1);
 		i++;
 	}
