@@ -6,16 +6,16 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 01:42:10 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/23 01:44:27 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/23 02:27:20 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../minishell.h"
 
 int	ft_out(t_red *red)
 {
-	int		fd;
+	int	fd;
+
 	while (red)
 	{	
 		fd = open(red->file_name, O_CREAT | O_TRUNC | O_RDWR, 0666);
@@ -23,7 +23,6 @@ int	ft_out(t_red *red)
 			return (perror(""), 1);
 		red = red->next;
 	}
-	
 	dup2(fd, 1);
 	close(fd);
 	return (0);
@@ -83,13 +82,4 @@ int	ft_execred(t_list *lst)
 			return (ft_apnd(lst->red));
 	}
 	return (0);
-}
-
-t_env	*empty_env(t_env *lnv, t_env *new)
-{
-	new = ft_envnew(getcwd(NULL, 0), ft_strdup("PWD"));
-	lst_addback_env(&lnv, new);
-	new = ft_envnew(ft_strdup(PATH), ft_strdup("PATH"));
-	lst_addback_env(&lnv, new);
-	return (lnv);
 }

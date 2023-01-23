@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:04:41 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/23 00:43:53 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/23 02:20:01 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,6 @@ void	f_exit(t_list *cmd)
 			else
 				exit(ft_atoi(cmd->cmd[1]));
 		}
-			exit(g_exit_status);
+		exit(g_exit_status);
 	}
 }

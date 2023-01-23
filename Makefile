@@ -6,7 +6,7 @@
 #    By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/01 18:38:23 by ajafy             #+#    #+#              #
-#    Updated: 2023/01/23 00:47:17 by ozahid-          ###   ########.fr        #
+#    Updated: 2023/01/23 02:28:23 by ozahid-          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC = 	minishell.c Parsing/delete_quotes.c Parsing/create_lst_temp.c Parsing/rem
 		Parsing/herdoc.c Parsing/signals_handler.c Parsing/free_listes.c Parsing/minishell_utils.c\
 		execution/red.c builtins/cd.c builtins/pwd_env_echo.c builtins/isbuiltins.c builtins/export1.c\
 		builtins/export2.c builtins/export3.c builtins/ft_run.c builtins/unset.c builtins/echo_utils.c builtins/temp.c\
-		execution/execve.c execution/pipe.c printf_/ft_printf.c printf_/ft_putchar.c \
+		execution/execve.c execution/pipe.c execution/empty_env.c printf_/ft_printf.c printf_/ft_putchar.c \
 		printf_/ft_putstr.c printf_/ft_putnbr.c printf_/ft_argp.c printf_/ft_hexa.c printf_/ft_unsignednumber.c
 		
 OBJ = $(addprefix build/, $(SRC:.c=.o))

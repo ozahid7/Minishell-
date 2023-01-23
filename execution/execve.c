@@ -6,19 +6,38 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/23 00:53:28 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/23 02:26:46 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
+char	*path_utils(char **path, t_env *data, char *cmd, char *ret)
+{
+	int	i;
+
+	i = 0;
+	path = ft_split(data->value, ':');
+	while (path[i])
+	{
+		path[i] = ft_strjoin(path[i], "/");
+		path[i] = ft_strjoin(path[i], cmd);
+		if (!access (path[i], X_OK || F_OK))
+			break ;
+		i++;
+	}
+	if (path[i] == NULL)
+		return (ft_freetab(path), cmd);
+	ret = ft_strdup(path[i]);
+	ft_freetab(path);
+	return (ret);
+}
+
 char	*path(t_env *data, char *cmd)
 {
 	char	**path;
 	char	*ret;
-	int		i;
 
-	i = 0;
 	path = NULL;
 	ret = cmd;
 	data = return_node(data, "PATH");
@@ -27,21 +46,7 @@ char	*path(t_env *data, char *cmd)
 	if (check_char(cmd, '/') || access(cmd, X_OK || F_OK) == 0)
 		return (cmd);
 	if (data->value)
-	{
-		path = ft_split(data->value, ':');
-		while (path[i])
-		{
-			path[i] = ft_strjoin(path[i], "/");
-			path[i] = ft_strjoin(path[i], cmd);
-			if (!access (path[i], X_OK || F_OK))
-				break ;
-			i++;
-		}
-		if (path[i] == NULL)
-			return (ft_freetab(path), cmd);
-		ret = ft_strdup(path[i]);
-		ft_freetab(path);
-	}
+		ret = path_utils(path, data, cmd, ret);
 	return (ret);
 }
 
