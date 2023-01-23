@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/23 20:03:46 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/24 00:00:18 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*path(t_env *data, char *cmd)
 	ret = cmd;
 	if (check_char(ret, '/') && access(ret, X_OK || F_OK) != 0)
 	{
-		fprint(2, "minishell: cd: %s: No such file or directory\n",
+		fprint(2, "minishell: %s: No such file or directory\n",
 			ret);
 		return (g_exit_status = 127, NULL);
 	}
@@ -58,8 +58,18 @@ char	*path(t_env *data, char *cmd)
 
 int	exec_cmd(t_list *cmd, char *path, char **arg)
 {
-	if (cmd->red && ft_execred(cmd) == 1)
-		exit(1);
+	int	i;
+
+	i = 0;
+	while (cmd->red)
+	{
+		if (ft_execred(cmd) == 1)
+			exit(1);
+		i++;
+		cmd->red = cmd->red->next;
+	}
+	if (i != 0 && !ft_strcmp(cmd->cmd[0], ""))
+		exit (0);
 	if (cmd->red && !ft_strcmp(cmd->cmd[0], ""))
 		return (1);
 	if (execve(path, cmd->cmd, arg) == -1)

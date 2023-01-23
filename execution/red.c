@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 01:42:10 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/23 02:27:20 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/24 00:05:22 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,9 @@ int	ft_out(t_red *red)
 {
 	int	fd;
 
-	while (red)
-	{	
-		fd = open(red->file_name, O_CREAT | O_TRUNC | O_RDWR, 0666);
-		if (fd == -1)
-			return (perror(""), 1);
-		red = red->next;
-	}
+	fd = open(red->file_name, O_CREAT | O_TRUNC | O_RDWR, 0666);
+	if (fd == -1)
+		return (perror(""), 1);
 	dup2(fd, 1);
 	close(fd);
 	return (0);
@@ -46,13 +42,9 @@ int	ft_apnd(t_red *red)
 {
 	int		fd;
 
-	while (red)
-	{
-		fd = open(red->file_name, O_CREAT | O_RDWR | O_APPEND, 0777);
-		if (fd == -1)
-			return (perror(""), 1);
-		red = red->next;
-	}
+	fd = open(red->file_name, O_CREAT | O_RDWR | O_APPEND, 0777);
+	if (fd == -1)
+		return (perror(""), 1);
 	dup2(fd, 1);
 	close(fd);
 	return (0);
@@ -81,5 +73,5 @@ int	ft_execred(t_list *lst)
 		if (lst->red->type_red == 77)
 			return (ft_apnd(lst->red));
 	}
-	return (0);
+	return (1);
 }
