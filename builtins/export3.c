@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export3.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 13:26:06 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/21 21:45:57 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/23 19:55:54 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ char	*dup_name(char *src)
 	i = 0;
 	len = 0;
 	dst = malloc(sizeof(char) * ft_strlen(src) + 1);
+	if (!dst)
+		return (NULL);
 	while (src[i] && src[i] != '=')
 	{
 		if (src[i] != '+')

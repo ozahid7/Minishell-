@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 07:06:47 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/20 19:53:24 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/23 20:02:21 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	handler_sig_herdoc(int sig)
 	}
 	if (sig == 3)
 	{
-		printf("\b\b");
+		fprint(1, "\b\b");
 		return ;
 	}
 }

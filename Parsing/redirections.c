@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirections.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:08:56 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/20 10:15:42 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/23 20:02:10 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	herdoc(t_temp *lst, int *fds, t_env **head_env, int i)
 		str = readline("> ");
 		if (!str)
 		{
-			printf ("\b\b");
+			fprint (1, "\b\b");
 			break ;
 		}	
 		if (ft_strcmp(str, lst->next->content) == 0)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   temp.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 15:39:31 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/22 00:05:46 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/23 19:56:15 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	**get_arg(t_env *env)
 
 	i = 0;
 	len = env_len(env);
-	str = malloc(sizeof(char *) * len);
+	str = malloc(sizeof(char *) * (len + 1));
 	if (!str)
 		return (NULL);
 	while (env)

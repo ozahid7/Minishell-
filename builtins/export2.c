@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 19:42:11 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/22 23:30:06 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/23 19:59:13 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	ft_addnode(t_env *env, char *cnt)
 	n = 0;
 	new = NULL;
 	name = dup_name(cnt);
-	if (is_valid(name, cnt))
+	if (!name || is_valid(name, cnt))
 		return (free(name), fprint(2, "minishell: export: %s"
 				": not valid identifier\n", cnt), 1);
 	update = return_node(env, name);

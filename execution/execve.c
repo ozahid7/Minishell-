@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/23 16:57:42 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/23 20:03:46 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ char	*path(t_env *data, char *cmd)
 	if (check_char(ret, '/') && access(ret, X_OK || F_OK) != 0)
 	{
 		fprint(2, "minishell: cd: %s: No such file or directory\n",
-			ret, 0);
-		return (0);
+			ret);
+		return (g_exit_status = 127, NULL);
 	}
 	data = return_node(data, "PATH");
 	if (!data)
