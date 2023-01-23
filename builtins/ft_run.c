@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 00:20:46 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/22 23:51:56 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/23 17:15:30 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	ft_run_utils(t_list *lst, t_env **env, int x)
 	int	i;
 
 	i = 1;
+	g_exit_status = 0;
 	if (x == 1)
 	{
 		while (lst->cmd[i])

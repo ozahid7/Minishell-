@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipe.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 03:09:55 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/22 02:19:42 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/23 17:06:11 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ static int	is_built(t_list *lst)
 void	ft_pipe_utils(int *fd, t_list *lst, t_env **head_env, t_pip p)
 {
 	if (*lst->cmd && is_built(lst))
+	{
 		ft_run(lst, head_env);
+	}
 	else
 		ft_fork(p, *head_env, lst, fd);
 }

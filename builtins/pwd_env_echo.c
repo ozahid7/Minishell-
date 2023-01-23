@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:04:41 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/23 02:20:01 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/23 17:29:35 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,12 @@ void	ft_pwd(t_list *lst)
 {
 	char	*pwd;
 
+	g_exit_status = 0;
 	pwd = getcwd(NULL, 0);
 	if (!pwd)
 	{
 		fprint(2, "minishell: pwd: No such file or directory\n");
+		g_exit_status = 1;
 		return ;
 	}
 	if (lst->cmd != NULL && ft_strcmp(lst->cmd[0], "pwd") == 0)
@@ -68,6 +70,7 @@ void	f_exit(t_list *cmd)
 {
 	int	i;
 
+	g_exit_status = 0;
 	fprint(2, "exit\n");
 	if (cmd->cmd[1] && cmd->cmd[2])
 	{

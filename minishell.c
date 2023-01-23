@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:33:06 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/23 01:50:33 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/23 17:28:04 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	exit_status(void)
 	save = flag;
 	while (pid != -1)
 		pid = waitpid(-1, &flag, 0);
+	g_exit_status = 0;
 	signal(SIGINT, handler_sig);
 	signal(SIGQUIT, SIG_IGN);
 	if (WIFSIGNALED(flag))
