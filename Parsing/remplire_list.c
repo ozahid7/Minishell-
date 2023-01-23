@@ -6,7 +6,7 @@
 /*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 01:42:02 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/20 10:16:26 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/23 22:06:16 by ajafy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ char	**ft_split_list_utils(t_temp *lst, int len, t_red **head)
 	{
 		if (ft_strcmp(lst->content, " ") != 0 || lst->i != 0)
 		{
+			if (lst->content[0] != '\0')
 			s[i++] = lst->content;
 			if (lst->red)
 				ft_lstadd_back_red(head, lst->red);
