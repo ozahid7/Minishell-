@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   remplire_list.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 01:42:02 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/23 22:06:16 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/23 23:33:41 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,30 +35,40 @@ int	ft_lstsize_pipe(t_temp *lst)
 	return (i);
 }
 
+char	**ft_split_list_utils_(char **s, int i, int j)
+{
+	if (i == 0)
+		s[i++] = ft_strdup("");
+	if (j == 0)
+		return (NULL);
+	s[i] = NULL;
+	return (s);
+}
+
 char	**ft_split_list_utils(t_temp *lst, int len, t_red **head)
 {
 	char	**s;
 	int		i;
+	int		j;
 
 	i = 0;
+	j = 0;
 	s = malloc(len * sizeof(char *) + 1);
 	if (!s)
 		return (NULL);
-	while (i < len && lst)
+	while (j < len && lst)
 	{
 		if (ft_strcmp(lst->content, " ") != 0 || lst->i != 0)
 		{
 			if (lst->content[0] != '\0')
-			s[i++] = lst->content;
+				s[i++] = lst->content;
 			if (lst->red)
 				ft_lstadd_back_red(head, lst->red);
+			j++;
 		}
 		lst = lst->next;
 	}
-	s[i] = NULL;
-	if (i == 0)
-		return (NULL);
-	return (s);
+	return (ft_split_list_utils_(s, i, j));
 }
 
 t_list	*ft_split_list(t_list *lst, t_temp *lst_temp)
@@ -87,14 +97,5 @@ t_list	*ft_split_list(t_list *lst, t_temp *lst_temp)
 		if (lst_temp)
 			lst_temp = lst_temp->next;
 	}
-	return (lst);
-}
-
-t_list	*remplire_list(t_list *lst, t_temp **head_temp)
-{
-	t_temp	*lst_temp;
-
-	lst_temp = *head_temp;
-	lst = ft_split_list(lst, lst_temp);
 	return (lst);
 }

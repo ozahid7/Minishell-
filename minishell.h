@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:32:59 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/23 19:52:57 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/23 23:34:41 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,7 @@ Parsing
 */
 
 int		ft_remplire_listes(char *s, t_temp **lst_t, t_env **lst_e);
+t_list	*ft_split_list(t_list *lst, t_temp *lst_temp);
 int		ft_check_quotes(char *str);
 void	ft_exit(void);
 t_env	*before_while(int ac, char **av, char **env);

@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:08:56 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/23 20:02:10 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/23 23:33:54 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,13 @@ int	redirections(t_temp *lst, t_env **head_env)
 		lst = lst->next;
 	}
 	return (0);
+}
+
+t_list	*remplire_list(t_list *lst, t_temp **head_temp)
+{
+	t_temp	*lst_temp;
+
+	lst_temp = *head_temp;
+	lst = ft_split_list(lst, lst_temp);
+	return (lst);
 }
