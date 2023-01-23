@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:56:02 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/22 19:36:08 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/23 00:53:28 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,29 @@ char	*path(t_env *data, char *cmd)
 	int		i;
 
 	i = 0;
+	path = NULL;
+	ret = cmd;
 	data = return_node(data, "PATH");
 	if (!data)
 		return (cmd);
 	if (check_char(cmd, '/') || access(cmd, X_OK || F_OK) == 0)
 		return (cmd);
-	path = ft_split(data->value, ':');
-	while (path[i])
+	if (data->value)
 	{
-		path[i] = ft_strjoin(path[i], "/");
-		path[i] = ft_strjoin(path[i], cmd);
-		if (!access (path[i], X_OK || F_OK))
-			break ;
-		i++;
+		path = ft_split(data->value, ':');
+		while (path[i])
+		{
+			path[i] = ft_strjoin(path[i], "/");
+			path[i] = ft_strjoin(path[i], cmd);
+			if (!access (path[i], X_OK || F_OK))
+				break ;
+			i++;
+		}
+		if (path[i] == NULL)
+			return (ft_freetab(path), cmd);
+		ret = ft_strdup(path[i]);
+		ft_freetab(path);
 	}
-	if (path[i] == NULL)
-		return (ft_freetab(path), cmd);
-	ret = ft_strdup(path[i]);
-	ft_freetab(path);
 	return (ret);
 }
 

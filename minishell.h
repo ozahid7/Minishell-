@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 21:32:59 by ajafy             #+#    #+#             */
-/*   Updated: 2023/01/21 22:56:20 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/22 23:54:34 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,7 +205,7 @@ void	ft_update(t_env *tmp, char *content, char *name);
 //builtins unset
 void	ft_envdelone(t_env *env, void (*del)(void*));
 t_env	*ft_envnew(char *content, char *name);
-void	ft_unset(t_env **env, t_list *lst);
+void	ft_unset(t_env **env, char *content);
 //./execution/check_redirections.c
 int		check_redirections(t_red *red);
 int		create_file(t_red *red, int fd);

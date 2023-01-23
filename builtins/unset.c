@@ -6,7 +6,7 @@
 /*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:16:01 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/22 22:29:15 by ozahid-          ###   ########.fr       */
+/*   Updated: 2023/01/22 23:53:49 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ t_env	*del_node(t_env **env, char *name)
 	return (*env);
 }
 
-void	ft_unset(t_env **env, t_list *lst)
+void	ft_unset(t_env **env, char *content)
 {
 	char	*name;
 
-	name = dup_name(lst->cmd[1]);
-	if (is_valid(name, lst->cmd[1]))
+	name = dup_name(content);
+	if (is_valid(name, content))
 		fprint(2, "minishell: unset: %s"
-			": not valid identifier\n", lst->cmd[1]);
-	else if (env_len(*env) - 1 == 1)
+			": not valid identifier\n", content);
+	 if (env_len(*env) - 1 == 1)
 	{
 		if (!ft_strcmp((*env)->key, name))
 		{
@@ -55,6 +55,6 @@ void	ft_unset(t_env **env, t_list *lst)
 		}
 	}
 	else
-		*env = del_node(env, name);
+		del_node(env, name);
 	free(name);
 }

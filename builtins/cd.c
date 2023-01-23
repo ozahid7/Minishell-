@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cd.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajafy <ajafy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ozahid- <ozahid-@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 23:54:26 by ozahid-           #+#    #+#             */
-/*   Updated: 2023/01/21 19:00:22 by ajafy            ###   ########.fr       */
+/*   Updated: 2023/01/23 01:14:32 by ozahid-          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,12 @@ void	cd_cond2(t_list *lst, int *i, t_env *env)
 			&& ft_strcmp(lst->cmd[1], "-") == 0))
 	{
 		old = return_node(env, "OLDPWD");
-		if (old->value != NULL)
+		if (old)
 		{
-			fprint(1, "%s\n", old->value);
-			chdir(old->value);
+			if (check_name(env, old->key))
+				fprint(1, "%s\n", old->value);
+			if (check_name(env, old->key))
+				chdir(old->value);
 		}
 		else
 			fprint(2, "minishell: cd: OLDPWD not set\n");
@@ -67,8 +69,9 @@ void	ft_cd(t_env *env, t_list *lst)
 		return ;
 	}
 	pwd = getcwd(NULL, 0);
-	ft_change_pwd("PWD", pwd, env);
-	if (i != 1)
+	if (pwd)
+		ft_change_pwd("PWD", pwd, env);
+	if (old_pwd && i != 1)
 		ft_change_pwd("OLDPWD", old_pwd, env);
 	free(pwd);
 	free(old_pwd);
@@ -84,7 +87,7 @@ char	*ft_change_pwd(char *str, char *pwd, t_env *env)
 		if (ft_strcmp(env->key, str) == 0)
 		{
 			free(env->value);
-			env->value = ft_strdup(pwd);
+				env->value = ft_strdup(pwd);
 		}
 		env = env->next;
 	}
